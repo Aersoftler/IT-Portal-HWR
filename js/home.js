@@ -5,6 +5,7 @@
 //Wird aufgerufen, wenn die Seite fertig geladen hat
 window.onload = function () {
     load();
+    showFooter();
 };
 
 //Wird aufgerufen, wenn sich die Auflösung der Seite verändert hat
