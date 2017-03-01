@@ -11,9 +11,9 @@ window.onresize = function () {
 
 //Wird genutzt, um die Seite korrekt anzuzeigen
 function load() {
-    var width = window.innerWidth;
+    let width = window.innerWidth;
     for (i = 0; i < 4; i++) {
-        var itemId = "item" + i;
+        let itemId = "item" + i;
         document.getElementById(itemId).style.height = (width / 5) < 200 ? "200px" : (width / 5) + "px";
     }
 }
