@@ -1,0 +1,23 @@
+{
+  "name": "softwareservicehwr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "console.log(\"Hallo David\");"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aersoftler/SoftwareServiceHWR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aersoftler/SoftwareServiceHWR/issues"
+  },
+  "homepage": "https://github.com/Aersoftler/SoftwareServiceHWR#readme"
+}
