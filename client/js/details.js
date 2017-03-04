@@ -1,7 +1,6 @@
 //Wird aufgerufen, wenn die Seite fertig geladen hat
 window.onload = function () {
     showFooter();
-    console.log(window.location.pathname);
 };
 
 angular.module(
