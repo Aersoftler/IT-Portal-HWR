@@ -28,9 +28,9 @@ app.get("/details", function (req, res) {
     res.sendFile(path.join(htmlPath, "details.html"));
 });
 
-// app.get("/desktopApp", function (req, res) {
-//     res.send(readJsonFile(desktopAppFile));
-// });
+app.post("/desktopApp", function (req, res) {
+    res.send(readJsonFile(desktopAppFile));
+});
 //
 // app.get("/desktopApp/:applikation", function (req, res) {
 //     let apps = readJsonFile(desktopAppFile);

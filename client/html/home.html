@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" ng-app="home">
 <head>
     <meta charset="UTF-8">
     <title>SoftwareServiceHWR</title>
@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/ownStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/addHeaderFooter.js"></script>
-    <script src="/js/home.js"></script>
 </head>
 <body>
 <!-- carousell-->
@@ -76,10 +75,8 @@
             </div>
             <div class="well col-sm-3">
                 <div><strong>Desktop-Anwendung</strong></div>
-                <div class="col-sm-offset-1">
-                    <li><a href="">1. Anwendung</a></li>
-                    <li><a href="">2. Anwendung</a></li>
-                    <li><a href="">3. Anwendung</a></li>
+                <div class="col-sm-offset-1" ng-controller="desktopAppCtrl">
+                    <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
                     <li><a href="">weitere Anwendung...</a></li>
                 </div>
             </div>
@@ -105,5 +102,7 @@
     </div>
 </div>
 <div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+<script src="/js/home.js"></script>
 </body>
 </html>
