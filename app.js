@@ -5,6 +5,9 @@ let path = require("path");
 
 let htmlPath = __dirname + "/client/html";
 let desktopAppFile = __dirname + "/data/desktopApps.json";
+let embeddedAppFile = __dirname + "/data/embeddedApps.json";
+let mobileAppFile = __dirname + "/data/mobileApps.json";
+let websiteFile = __dirname + "/data/websites.json";
 let picPath = __dirname + "/pics";
 let programPath = __dirname + "/program";
 
@@ -31,24 +34,45 @@ app.get("/details", function (req, res) {
 app.post("/desktopApp", function (req, res) {
     res.send(readJsonFile(desktopAppFile));
 });
-//
-// app.get("/desktopApp/:applikation", function (req, res) {
-//     let apps = readJsonFile(desktopAppFile);
-//     res.send(apps.filter(function (app) {
-//         return app.name == req.params.applikation
-//     }));
-// });
 
-app.get("/details/:typ/:applikation", function (req, res) {
+app.post("/embeddedApp", function (req, res) {
+    res.send(readJsonFile(embeddedAppFile));
+});
+
+app.post("/mobileApp", function (req, res) {
+    res.send(readJsonFile(mobileAppFile));
+});
+
+app.post("/website", function (req, res) {
+    res.send(readJsonFile(websiteFile));
+});
+
+app.get("/details/:typ/:name", function (req, res) {
     res.sendFile(path.join(htmlPath, "details.html"));
 });
 
-app.post("/details/:typ/:applikation", function (req, res) {
+function getProduct(products, req) {
+    return products.filter(function (product) {
+        return product.name == req.params.name;
+    });
+}
+
+app.post("/details/:typ/:name", function (req, res) {
     if (req.params.typ == "desktopApp") {
         let apps = readJsonFile(desktopAppFile);
-        res.send(apps.filter(function (app) {
-            return app.name == req.params.applikation;
-        }));
+        res.send(getProduct(apps, req));
+    }
+    if (req.params.typ == "embeddedApp") {
+        let apps = readJsonFile(embeddedAppFile);
+        res.send(getProduct(apps, req));
+    }
+    if (req.params.typ == "mobileApp") {
+        let apps = readJsonFile(mobileAppFile);
+        res.send(getProduct(apps, req));
+    }
+    if (req.params.typ == "website") {
+        let sites = readJsonFile(websiteFile);
+        res.send(getProduct(sites, req));
     }
 });
 
@@ -62,12 +86,12 @@ function readJsonFile(file) {
     }
 }
 
-app.get("/details/:typ/download/:applikation/:program", function (req, res) {
-    res.sendFile(path.join(programPath, String(req.params.typ), String(req.params.applikation), String(req.params.program)));
+app.get("/details/:typ/download/:name/:program", function (req, res) {
+    res.sendFile(path.join(programPath, String(req.params.typ), String(req.params.name), String(req.params.program)));
 });
 
-app.get("/details/:typ/:applikation/:pic", function (req, res) {
-    res.sendFile(path.join(picPath, String(req.params.typ), String(req.params.applikation), String(req.params.pic)));
+app.get("/details/:typ/:name/:pic", function (req, res) {
+    res.sendFile(path.join(picPath, String(req.params.typ), String(req.params.name), String(req.params.pic)));
 });
 
 app.use(express.static(__dirname + "/client"));

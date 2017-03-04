@@ -1,5 +1,8 @@
 let detailUrl = "/details";
 let desktopAppUrl = detailUrl + "/desktopApp";
+let mobileAppUrl = detailUrl + "/mobileApp";
+let embeddedAppUrl = detailUrl + "/embeddedApp";
+let websiteUrl = detailUrl + "/website";
 
 //Wird aufgerufen, wenn die Seite fertig geladen hat
 window.onload = function () {
@@ -21,33 +24,63 @@ function load() {
     }
 }
 
-angular.module(
-    "home", []
-)
-    .controller(
-        'desktopAppCtrl',
-        function ($scope, $http) {
-            $http.post('/desktopApp').then(function (response) {
-                let applications = response.data;
-                let dataSize = applications.length - 1;
-                let result = [];
-                let alreadyGetted = [];
-                alreadyGetted.length = dataSize + 1;
-                let i = 0;
-                do {
-                    let randomNumber = Math.floor(Math.random() * dataSize);
-                    if (alreadyGetted[randomNumber] == true) {
-                        continue;
-                    }
-                    let app = applications[randomNumber];
-                    result.push({
-                        "name": app.name,
-                        "url": desktopAppUrl + '/' + app.name
-                    });
-                    alreadyGetted[randomNumber] = true;
-                    i++;
-                } while (i < 3);
-                $scope.apps = result;
-            })
+module = angular.module("home", []);
+
+
+function randomizeList(response, $scope, url) {
+    let applications = response.data;
+    let dataSize = applications.length - 1;
+    let result = [];
+    let alreadyGetted = [];
+    alreadyGetted.length = dataSize + 1;
+    let i = 0;
+    do {
+        let randomNumber = Math.floor(Math.random() * dataSize);
+        if (alreadyGetted[randomNumber] == true) {
+            continue;
         }
-    );
+        let app = applications[randomNumber];
+        result.push({
+            "name": app.name,
+            "url": url + '/' + app.name
+        });
+        alreadyGetted[randomNumber] = true;
+        i++;
+    } while (i < 3);
+    $scope.apps = result;
+}
+module.controller(
+    'desktopAppCtrl',
+    function ($scope, $http) {
+        $http.post('/desktopApp').then(function (response) {
+            randomizeList(response, $scope, desktopAppUrl);
+        })
+    }
+);
+
+module.controller(
+    'mobileAppCtrl',
+    function ($scope, $http) {
+        $http.post('/mobileApp').then(function (response) {
+            randomizeList(response, $scope, mobileAppUrl);
+        })
+    }
+);
+
+module.controller(
+    'embeddedAppCtrl',
+    function ($scope, $http) {
+        $http.post('/embeddedApp').then(function (response) {
+            randomizeList(response, $scope, embeddedAppUrl);
+        })
+    }
+);
+
+module.controller(
+    'websiteCtrl',
+    function ($scope, $http) {
+        $http.post('/website').then(function (response) {
+            randomizeList(response, $scope, websiteUrl);
+        })
+    }
+);
