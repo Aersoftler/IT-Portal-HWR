@@ -26,24 +26,41 @@
             </ol>
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" ng-controller="carrouselCtrl">
                 <div class="item active">
-                    <img id="item0" src="/images/Screenshot.PNG" alt="Chania">
-                    <div class="carousel-caption">
-                        <h3>Das ist ein Screenshot</h3>
-                    </div>
+                    <a href="{{desktopApp.url}}">
+                        <img id="item0" src="{{desktopApp.logo}}" alt="Chania">
+                        <div class="carousel-caption">
+                            <h2>{{desktopApp.name}}</h2>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="item">
-                    <img id="item1" src="" alt="Dummy1">
+                    <a href="{{mobileApp.url}}">
+                        <img id="item1" src="{{mobileApp.logo}}" alt="Chania">
+                        <div class="carousel-caption">
+                            <h2>{{mobileApp.name}}</h2>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="item">
-                    <img id="item2" src="/images/WhatsAppLogo.png" alt="Chania">
+                    <a href="{{website.url}}">
+                        <img id="item2" src="{{website.logo}}" alt="Chania">
+                        <div class="carousel-caption">
+                            <h2>{{website.name}}</h2>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="item">
-                    <img id="item3" src="" alt="Dummy2">
+                    <a href="{{embeddedApp.url}}">
+                        <img id="item3" src="{{embeddedApp.logo}}" alt="Chania">
+                        <div class="carousel-caption">
+                            <h2>{{embeddedApp.name}}</h2>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- Left and right controls -->

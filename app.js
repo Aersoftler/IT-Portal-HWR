@@ -94,6 +94,10 @@ app.get("/details/:typ/:name/:pic", function (req, res) {
     res.sendFile(path.join(picPath, String(req.params.typ), String(req.params.name), String(req.params.pic)));
 });
 
+app.post("/allProducts", function (req, res) {
+    res.send(readJsonFile(desktopAppFile).concat(readJsonFile(mobileAppFile).concat(readJsonFile(embeddedAppFile).concat(readJsonFile(websiteFile)))));
+});
+
 app.use(express.static(__dirname + "/client"));
 app.listen(3000);
 console.log("Server ist gestartet");

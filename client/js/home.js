@@ -26,6 +26,48 @@ function load() {
 
 module = angular.module("home", []);
 
+module.controller(
+    'carrouselCtrl',
+    function ($scope, $http) {
+        $http.post('/mobileApp').then(function (response) {
+            let applications = response.data;
+            let app = applications[Math.floor(Math.random() * applications.length - 1)];
+            $scope.mobileApp = {
+                "name": app.name,
+                "url": mobileAppUrl + '/' + app.name,
+                "logo": mobileAppUrl + '/' + app.logo
+            };
+        });
+        $http.post('/desktopApp').then(function (response) {
+            let applications = response.data;
+            let app = applications[Math.floor(Math.random() * applications.length - 1)];
+            console.log(app.name);
+            $scope.desktopApp = {
+                "name": app.name,
+                "url": desktopAppUrl + '/' + app.name,
+                "logo": desktopAppUrl + '/' + app.logo
+            };
+        });
+        $http.post('/embeddedApp').then(function (response) {
+            let applications = response.data;
+            let app = applications[Math.floor(Math.random() * applications.length - 1)];
+            $scope.embeddedApp = {
+                "name": app.name,
+                "url": embeddedAppUrl + '/' + app.name,
+                "logo": embeddedAppUrl + '/' + app.logo
+            };
+        });
+        $http.post('/website').then(function (response) {
+            let applications = response.data;
+            let app = applications[Math.floor(Math.random() * applications.length - 1)];
+            $scope.website = {
+                "name": app.name,
+                "url": websiteUrl + '/' + app.name,
+                "logo": websiteUrl + '/' + app.logo
+            };
+        })
+    }
+);
 
 function randomizeList(response, $scope, url) {
     let applications = response.data;
