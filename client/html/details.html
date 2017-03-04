@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" ng-app="details">
 <head>
     <meta charset="UTF-8">
     <title>SoftwareServiceHWR - ...</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/ownStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/addHeaderFooter.js"></script>
-    <script src="/js/details.js"></script>
 </head>
-<body>
+<body ng-controller="detailCtrl">
 <div class="jumbotron">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Name, der ein bisschen länger ist</h1>
+                <h1>{{appli.name}}</h1>
             </div>
         </div>
     </div>
@@ -25,30 +24,22 @@
     <div class="row">
         <div class="col-sm-6">
             <div id="thumb" class="thumbnail" data-toggle="modal" data-target="#myModal">
-                <img class="img-responsive" src="/images/Screenshot.PNG">
+                <img class="img-responsive" src="{{appli.logo}}">
                 <div class="caption" style="text-align: right">
                     <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-                    weitere Bilder
+                    Screenshots
                 </div>
             </div>
             <ul class="list-group">
-                <li class="list-group-item"><a href="">Download</a></li>
-                <li class="list-group-item"><a href="">GitHub</a></li>
-                <li class="list-group-item"><a href="">...</a></li>
+                <li class="list-group-item" ng-repeat="download in appli.download"><a
+                        href="{{'download\\' + download}}">Download</a></li>
+                <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}">GitHub</a></li>
+                <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}">Webseite</a></li>
             </ul>
         </div>
         <div class="col-sm-6">
             <div class="well">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                ametfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjfdjsklnfkdlsnfkdlsankflj
+                {{appli.beschreibung}}
             </div>
         </div>
     </div>
@@ -62,33 +53,15 @@
                 </div>
                 <div class="modal-body">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
-
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
+
                             <div class="item active">
-                                <img id="item0" src="/images/Screenshot.PNG" alt="Chania">
-                                <div class="carousel-caption">
-                                    <h3>Das ist ein Screenshot</h3>
-                                </div>
+                                <img id="itemLogo" src="{{appli.logo}}" alt="Chania">
                             </div>
 
-                            <div class="item">
-                                <img id="item1" src="" alt="Dummy1">
-                            </div>
-
-                            <div class="item">
-                                <img id="item2" src="/images/WhatsAppLogo.png" alt="Chania">
-                            </div>
-
-                            <div class="item">
-                                <img id="item3" src="" alt="Dummy2">
+                            <div class="item" ng-repeat="screenshot in appli.screenshots">
+                                <img id="{{'item' + $index}}" src="{{screenshot}}" alt="Chania">
                             </div>
 
                             <!-- Left and right controls -->
@@ -111,5 +84,7 @@
     </div>
 </div>
 <div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+<script src="/js/details.js"></script>
 </body>
 </html>
