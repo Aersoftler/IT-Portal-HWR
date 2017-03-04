@@ -7,6 +7,7 @@ let websiteUrl = detailUrl + "/website";
 //Wird aufgerufen, wenn die Seite fertig geladen hat
 window.onload = function () {
     load();
+    showHeader();
     showFooter();
 };
 

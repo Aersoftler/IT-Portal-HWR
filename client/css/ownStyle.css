@@ -6,3 +6,92 @@
 .blackArrow {
     color: #0f0f0f;
 }
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 120%;
+    padding-top: 0px;
+    width: auto;
+}
+
+.navcon{
+    display: flex;
+}
+
+.navbar-right{
+    order: 2;
+}
+
+.navbar-form{
+    margin-left:  auto ;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    body{
+        padding-top: 24px;
+    }
+    .navbar-default{
+        padding-top: 14px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 685px){
+    body{
+        padding-top:35px;
+    }
+}
+
+@media (max-width: 685px) and (min-width: 460px){
+    body {
+        padding-top: 95px;
+    }
+
+    .navcon{
+        display: block;
+    }
+
+    .navbar-left{
+        float: left;
+        padding-bottom: 5px;
+    }
+
+    .navbar-right{
+        float: right;
+    }
+
+    .navbar-form{
+        clear: both;
+        width:100%;
+    }
+}
+
+@media (max-width: 460px) {
+    body {
+        padding-top: 155px;
+    }
+
+    .navcon {
+        display: block;
+    }
+
+    .navbar-left{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+    .navbar-right{
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-form {
+        width: 100%;
+    }
+}
+
+
+
