@@ -34,8 +34,10 @@
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="download in appli.download"><a
                         href="{{'download\\' + download}}">Download</a></li>
-                <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}">GitHub</a></li>
-                <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}">Webseite</a></li>
+                <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}" target="_blank">GitHub</a>
+                </li>
+                <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}" target="_blank">Webseite</a>
+                </li>
             </ul>
         </div>
         <div class="col-sm-6">
