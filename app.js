@@ -31,6 +31,10 @@ app.get("/details", function (req, res) {
     res.sendFile(path.join(htmlPath, "details.html"));
 });
 
+app.get("/uebersicht", function (req, res) {
+    res.sendFile(path.join(htmlPath, "uebersicht.html"));
+});
+
 app.post("/desktopApp", function (req, res) {
     res.send(readJsonFile(desktopAppFile));
 });
