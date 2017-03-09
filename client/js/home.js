@@ -36,7 +36,7 @@ module.controller(
     function ($scope, $http) {
         $http.post('/mobileApp').then(function (response) {
             const applications = response.data;
-            const app = applications[Math.floor(Math.random() * applications.length - 1)];
+            const app = applications[Math.floor(Math.random() * applications.length)];
             $scope.mobileApp = {
                 "name": app.name,
                 "url": detailMobileAppUrl + '/' + app.name,
@@ -45,8 +45,9 @@ module.controller(
         });
         $http.post('/desktopApp').then(function (response) {
             const applications = response.data;
-            const app = applications[Math.floor(Math.random() * applications.length - 1)];
-            console.log(app.name);
+            const number = Math.floor(Math.random() * applications.length);
+            const app = applications[number];
+            console.log(number);
             $scope.desktopApp = {
                 "name": app.name,
                 "url": detailDesktopAppUrl + '/' + app.name,
@@ -55,7 +56,7 @@ module.controller(
         });
         $http.post('/embeddedApp').then(function (response) {
             const applications = response.data;
-            const app = applications[Math.floor(Math.random() * applications.length - 1)];
+            const app = applications[Math.floor(Math.random() * applications.length)];
             $scope.embeddedApp = {
                 "name": app.name,
                 "url": detailEmbeddedAppUrl + '/' + app.name,
@@ -64,7 +65,7 @@ module.controller(
         });
         $http.post('/website').then(function (response) {
             const applications = response.data;
-            const app = applications[Math.floor(Math.random() * applications.length - 1)];
+            const app = applications[Math.floor(Math.random() * applications.length)];
             $scope.website = {
                 "name": app.name,
                 "url": detailWebsiteUrl + '/' + app.name,
