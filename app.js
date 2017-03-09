@@ -1,15 +1,15 @@
-let express = require("express");
-let app = express();
-let fs = require('fs');
-let path = require("path");
+const express = require("express");
+const app = express();
+const fs = require('fs');
+const path = require("path");
 
-let htmlPath = __dirname + "/client/html";
-let desktopAppFile = __dirname + "/data/desktopApps.json";
-let embeddedAppFile = __dirname + "/data/embeddedApps.json";
-let mobileAppFile = __dirname + "/data/mobileApps.json";
-let websiteFile = __dirname + "/data/websites.json";
-let picPath = __dirname + "/pics";
-let programPath = __dirname + "/program";
+const htmlPath = __dirname + "/client/html";
+const desktopAppFile = __dirname + "/data/desktopApps.json";
+const embeddedAppFile = __dirname + "/data/embeddedApps.json";
+const mobileAppFile = __dirname + "/data/mobileApps.json";
+const websiteFile = __dirname + "/data/websites.json";
+const picPath = __dirname + "/pics";
+const programPath = __dirname + "/program";
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(htmlPath, "home.html"));
@@ -63,26 +63,26 @@ function getProduct(products, req) {
 
 app.post("/details/:typ/:name", function (req, res) {
     if (req.params.typ == "desktopApp") {
-        let apps = readJsonFile(desktopAppFile);
+        const apps = readJsonFile(desktopAppFile);
         res.send(getProduct(apps, req));
     }
     if (req.params.typ == "embeddedApp") {
-        let apps = readJsonFile(embeddedAppFile);
+        const apps = readJsonFile(embeddedAppFile);
         res.send(getProduct(apps, req));
     }
     if (req.params.typ == "mobileApp") {
-        let apps = readJsonFile(mobileAppFile);
+        const apps = readJsonFile(mobileAppFile);
         res.send(getProduct(apps, req));
     }
     if (req.params.typ == "website") {
-        let sites = readJsonFile(websiteFile);
+        const sites = readJsonFile(websiteFile);
         res.send(getProduct(sites, req));
     }
 });
 
 function readJsonFile(file) {
     try {
-        let data = fs.readFileSync(file);
+        const data = fs.readFileSync(file);
         return JSON.parse(data);
     } catch (e) {
         console.log(file + "konnte nicht gelesen werden " + e);
