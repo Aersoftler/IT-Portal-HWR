@@ -35,6 +35,14 @@ app.get("/uebersicht", function (req, res) {
     res.sendFile(path.join(htmlPath, "uebersicht.html"));
 });
 
+app.get("/footer", function (req, res) {
+    res.sendFile(path.join(htmlPath, "footer.html"));
+});
+
+app.get("/header", function (req, res) {
+    res.sendFile(path.join(htmlPath, "header.html"));
+});
+
 app.post("/desktopApp", function (req, res) {
     res.send(readJsonFile(desktopAppFile));
 });
