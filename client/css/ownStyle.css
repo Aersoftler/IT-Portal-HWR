@@ -11,61 +11,62 @@
     padding: 0px;
 }
 
-.navbar-brand>img {
+.navbar-brand > img {
     height: 120%;
     padding-top: 0px;
     width: auto;
 }
 
-.navcon{
+.navcon {
     display: flex;
 }
 
-.navbar-right{
+.navbar-right {
     order: 2;
 }
 
-.navbar-form{
-    margin-left:  auto ;
+.navbar-form {
+    margin-left: auto;
     margin-right: auto;
 }
 
 @media (min-width: 768px) {
-    body{
+    body {
         padding-top: 24px;
     }
-    .navbar-default{
+
+    .navbar-default {
         padding-top: 14px;
     }
 }
 
-@media (max-width: 768px) and (min-width: 685px){
-    body{
-        padding-top:35px;
+@media (max-width: 768px) and (min-width: 685px) {
+    body {
+        padding-top: 35px;
     }
 }
 
-@media (max-width: 685px) and (min-width: 460px){
+@media (max-width: 685px) and (min-width: 460px) {
     body {
         padding-top: 95px;
     }
 
-    .navcon{
+    .navcon {
         display: block;
     }
 
-    .navbar-left{
+    .navbar-left {
         float: left;
         padding-bottom: 5px;
     }
 
-    .navbar-right{
+    .navbar-right {
         float: right;
     }
 
-    .navbar-form{
+    .navbar-form {
         clear: both;
-        width:100%;
+        width: 100%;
     }
 }
 
@@ -78,12 +79,13 @@
         display: block;
     }
 
-    .navbar-left{
+    .navbar-left {
         display: flex;
         justify-content: center;
         padding-bottom: 5px;
     }
-    .navbar-right{
+
+    .navbar-right {
         display: flex;
         justify-content: center;
     }
@@ -97,3 +99,6 @@
     padding-bottom: 0px;
 }
 
+.jumbotronUebersicht {
+    margin-bottom: 0px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftwareServiceHWR - ...</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/ownStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/addHeaderFooter.js"></script>
+</head>
+<body ng-controller="detailCtrl">
+<div id="header"></div>
+<div class="jumbotron jumbotronOuer jumbotronUebersicht">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Suchergebnisse</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-sm-3">
+        <h3>Typ</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>App</option>
+            <option>Desktop-Anwendung</option>
+            <option>Webseite</option>
+            <option>Embedded-Software</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Zielgruppe</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>Jeder</option>
+            <option>Studenten</option>
+            <option>Dozenten</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Jahrgang</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>IT-2013</option>
+            <option>IT-2014</option>
+            <option>IT-2015</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Sortieren nach...</h3>
+        <select class="form-control">
+            <option>Relevanz</option>
+            <option>Namen</option>
+            <option>Aktualität</option>
+        </select>
+    </div>
+</div>
+<div class="container">
+    <h6 style="margin-bottom: -20px; margin-top: 40px">xxx Lösungen gefunden</h6>
+    <hr>
+    <div class="well clearfix">
+        <div class="col-sm-4">
+            <img class="img-responsive" src="../images/WhatsAppLogo.png">
+        </div>
+        <div class="col-sm-8">
+            <h1 style="font-size: -webkit-xxx-large;">Name, der länger sein kann</h1>
+            <h3>Kurzbeschreibung</h3>
+        </div>
+    </div>
+    <div class="well clearfix">
+        <div class="col-sm-4">
+            <img class="img-responsive" src="../images/Screenshot.PNG">
+        </div>
+        <div class="col-sm-8">
+            <h1 style="font-size: -webkit-xxx-large;">Name, der länger sein kann</h1>
+            <h3>Kurzbeschreibung</h3>
+
+        </div>
+    </div>
+</div>
+<div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="/js/uebersicht.js"></script>
+</body>
+</html>
