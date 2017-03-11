@@ -106,8 +106,16 @@ app.get("/details/:typ/:name/:pic", function (req, res) {
     res.sendFile(path.join(picPath, String(req.params.typ), String(req.params.name), String(req.params.pic)));
 });
 
-app.post("/allProducts", function (req, res) {
-    res.send(readJsonFile(desktopAppFile).concat(readJsonFile(mobileAppFile).concat(readJsonFile(embeddedAppFile).concat(readJsonFile(websiteFile)))));
+app.get("/uebersicht/:search", function (req, res) {
+    res.sendFile(path.join(htmlPath, "uebersicht.html"));
+});
+
+function getAllProducts() {
+    return readJsonFile(desktopAppFile).concat(readJsonFile(mobileAppFile).concat(readJsonFile(embeddedAppFile).concat(readJsonFile(websiteFile))));
+}
+
+app.get("/allProducts", function (req, res) {
+    res.send(getAllProducts());
 });
 
 app.use(express.static(__dirname + "/client"));

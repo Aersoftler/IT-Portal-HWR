@@ -1,13 +1,3 @@
-const detailUrl = "/details";
-const desktopUrl = "/desktopApp";
-const mobileAppUrl = "/mobileApp";
-const embeddedAppUrl = "/embeddedApp";
-const websiteUrl = "/website";
-const detailDesktopAppUrl = detailUrl + desktopUrl;
-const detailMobileAppUrl = detailUrl + mobileAppUrl;
-const detailEmbeddedAppUrl = detailUrl + embeddedAppUrl;
-const detailWebsiteUrl = detailUrl + websiteUrl;
-
 //Wird aufgerufen, wenn die Seite fertig geladen hat
 window.onload = function () {
     load();
