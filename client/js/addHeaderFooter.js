@@ -1,7 +1,7 @@
 function showFooter() {
-    $('#foo').load('footer');
+    $('#foo').load('/footer');
 }
 
 function showHeader() {
-    $('#header').load('header');
+    $('#header').load("/header");
 }

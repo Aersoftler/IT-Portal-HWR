@@ -84,7 +84,7 @@ app.post("/details/:typ/:name", function (req, res) {
     }
     if (req.params.typ == "website") {
         const sites = readJsonFile(websiteFile);
-        res.send(getProduct(sites, req));
+        res.send(getPrduct(sites, req));
     }
 });
 

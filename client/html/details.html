@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="de" ng-app="details">
+<html lang="de" ng-app="details" ng-controller="detailCtrl">
 <head>
     <meta charset="UTF-8">
-    <title>SoftwareServiceHWR - ...</title>
+    <title>SoftwareServiceHWR - {{appli.name}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,8 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/addHeaderFooter.js"></script>
 </head>
-<body ng-controller="detailCtrl">
-<div id="header"></div>
+<header>
+    <div id="header"></div>
+</header>
+<body>
 <div class="jumbotron jumbotronOuer">
     <div class="container">
         <div class="row">
@@ -33,7 +35,7 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="download in appli.download"><a
-                        href="{{'download\\' + download}}">Download</a></li>
+                        href="{{'download\\' + appli.name + '\\' + download}}">Download</a></li>
                 <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}" target="_blank">GitHub</a>
                 </li>
                 <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}" target="_blank">Webseite</a>
