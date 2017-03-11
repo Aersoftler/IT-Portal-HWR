@@ -1,24 +1,3 @@
-//Wird aufgerufen, wenn die Seite fertig geladen hat
-window.onload = function () {
-    load();
-    showHeader();
-    showFooter();
-};
-
-//Wird aufgerufen, wenn sich die Auflösung der Seite verändert hat
-window.onresize = function () {
-    load();
-};
-
-//Wird genutzt, um die Seite korrekt anzuzeigen
-function load() {
-    const width = window.innerWidth;
-    for (let i = 0; i < 4; i++) {
-        const itemId = "item" + i;
-        document.getElementById(itemId).style.height = (width / 5) < 200 ? "200px" : (width / 5) + "px";
-    }
-}
-
 module = angular.module("home", []);
 
 module.controller(
@@ -37,7 +16,6 @@ module.controller(
             const applications = response.data;
             const number = Math.floor(Math.random() * applications.length);
             const app = applications[number];
-            console.log(number);
             $scope.desktopApp = {
                 "name": app.name,
                 "url": detailDesktopAppUrl + '/' + app.name,

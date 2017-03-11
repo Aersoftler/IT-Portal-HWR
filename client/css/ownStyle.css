@@ -1,6 +1,8 @@
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     margin: auto;
+    width: 20vw;
+    min-width: 200px;
 }
 
 .blackArrow {

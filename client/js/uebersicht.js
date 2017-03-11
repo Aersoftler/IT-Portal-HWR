@@ -1,9 +1,3 @@
-//Wird aufgerufen, wenn die Seite fertig geladen hat
-window.onload = function () {
-    showHeader();
-    showFooter();
-};
-
 module = angular.module("uebersicht", []);
 
 module.controller(

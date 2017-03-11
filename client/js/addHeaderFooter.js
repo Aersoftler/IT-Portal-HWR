@@ -1,7 +1,4 @@
-function showFooter() {
+window.onload = function () {
     $('#foo').load('/footer');
-}
-
-function showHeader() {
     $('#header').load("/header");
-}
+};
