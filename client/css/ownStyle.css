@@ -104,3 +104,21 @@
 .jumbotronUebersicht {
     margin-bottom: 0px;
 }
+
+#underThumb {
+    text-align: right;
+}
+
+.footerMiddle {
+    padding-right: 15vw;
+    padding-left: 15vw;
+}
+
+#myCarousel {
+    margin-top: 20px;;
+}
+
+#anzahlLoesungen {
+    margin-bottom: -20px;
+    margin-top: 40px;
+}

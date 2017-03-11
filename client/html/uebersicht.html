@@ -61,15 +61,15 @@
     </div>
 </div>
 <div class="container" ng-controller="resultsCtrl">
-    <h6 style="margin-bottom: -20px; margin-top: 40px">{{"xxx Lösungen gefunden"}}</h6>
+    <h6 id="anzahlLoesungen">{{"xxx Lösungen gefunden"}}</h6>
     <hr>
-    <div class="well clearfix" ng-repeat="result in results | filter: nameFilter | orderBy: 'name'">
+    <div class="well well-sm clearfix" ng-repeat="result in results | filter: nameFilter | orderBy: 'name'">
         <div class="col-sm-4">
             <img class="img-responsive" ng-src="{{result.logo}}">
         </div>
         <div class="col-sm-8">
-            <h1 style="font-size: -webkit-xxx-large;"><a href="{{result.url}}">{{result.name}}</a></h1>
-            <h3>{{result.kurzbeschreibung}}</h3>
+            <h2><a href="{{result.url}}">{{result.name}}</a></h2>
+            <h5>{{result.kurzbeschreibung}}</h5>
         </div>
     </div>
 </div>
