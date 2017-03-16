@@ -84,7 +84,7 @@ app.post("/details/:typ/:name", function (req, res) {
     }
     if (req.params.typ == "website") {
         const sites = readJsonFile(websiteFile);
-        res.send(getPrduct(sites, req));
+        res.send(getProduct(sites, req));
     }
 });
 
@@ -98,12 +98,12 @@ function readJsonFile(file) {
     }
 }
 
-app.get("/details/:typ/download/:name/:program", function (req, res) {
-    res.sendFile(path.join(programPath, String(req.params.typ), String(req.params.name), String(req.params.program)));
+app.get("/download/:download", function (req, res) {
+    res.sendFile(path.join(programPath, String(req.params.download)));
 });
 
-app.get("/details/:typ/:name/:pic", function (req, res) {
-    res.sendFile(path.join(picPath, String(req.params.typ), String(req.params.name), String(req.params.pic)));
+app.get("/pic/:name/:pic", function (req, res) {
+    res.sendFile(path.join(picPath, String(req.params.name), String(req.params.pic)));
 });
 
 app.get("/uebersicht/:search", function (req, res) {
