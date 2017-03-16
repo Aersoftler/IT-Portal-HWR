@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "name": "HWR-Chat",
+    "kurzbeschreibung": "Der HWR-Chat soll als Hochschul-eigenes Kommunikationsmittel den Studenten die Möglichkeit geben vom ersten Tag an auf einer echtzeit-Kommunikationsplattform vernetzt zu sein.",
+    "beschreibung": "Studenten der Hochschule für Wirtschaft und Recht im dualen Zweig sind in engen Kursverbänden organisiert, in denen sie ihr gesamtes Studium durchlaufen. Diese Gruppen von ungefähr 30 Studenten verbindet ein gemeinsames Interesse an Kursinhalten, sowie die Organisation des Hochschulalltags. Für diese Zwecke wird eine Austauschplattform in Echtzeit benötigt. Momentan findet dies uneinheitlich auf hochschulfremden Plattformen statt. Das Finden einer optimalen Plattform und das sich als Gruppe Einrichten auf der selbigen ist jedem Kurs selbst überlassen. Nicht immer ist eine einheitliche Lösung auffindbar. Die privaten Anbieter solcher Plattformen entsprechen nicht allen gewünschten Ansprüchen der Studenten in beispielsweise Sicherheit oder den für den Hochschulalltag relevanten angebotenen Funktionen. \nEine einheitliche Organisation, die den Studenten eine schnelle Kommunikation vom ersten Tag an der Hochschule an ermöglicht, soll den Start und den weiteren Verlauf an der Hochschule erleichtern. Hochschulrelevante Inhalte sollen auf einer von privaten Anbietern unabhängigen Plattform ausgetauscht werden können. Des Weiteren kann ein hochschulinternes Chatprogramm einen bereits vorbereiteten Login verwenden, der für alle hochschulrelevanten Plattformen einheitlich ist. So entfällt der Wartungs- und Registrieraufwand für die Studenten. \nIm HWR-Chat sind die Kurse bereits in einem Raum zusammengestellt. Das Suchen anderer Mitstudenten und deren Kontaktinformationen entfällt somit. Durch den Echtzeitchat kann schnell über Themen von “Wer bringt morgen ein Waffeleisen mit?” über “In welchem Raum seid ihr alle?” bis zu “Ich habe morgen Nachprüfung, kann mir jemand schnell das Thema noch einmal erklären?” diskutiert und beraten werden. Die Anzeige der Namen der Studenten erleichtert eine eindeutige Identifikation. Eine einfache und schnelle Kommunikation losgelöst von externen Anbietern wird den Studenten somit ermöglicht.",
+    "logo": "HWRChat_Logo.png",
+    "screenshots": [
+      "HWRChat_Screen1.png",
+      "HWRChat_Screen2.png"
+    ],
+    "download": [],
+    "gitHub": [],
+    "website": ["https://home.tebs-live.de/chat"],
+    "zielgruppe": "Studenten",
+    "jahrgang": "IT-2015"
+  },
+  {
+    "name": "HWRLitU",
+    "kurzbeschreibung": "LitU  -  Literatur  und  Unterlagen  ist  eine  Plattform im Internet, auf der Studenten und Dozenten Fachliteratur bewerten und eigene Unterlagen zur Verfügung stellen können, um anderen Studenten eine Orientierungshilfe bei der Auswahl geeigneter Literatur zu geben. ",
+    "beschreibung": "Dozenten verteilen zu Anfang des Semesters oft Listen mit zahlreichen Literaturempfehlungen, deren vollständige Anschaffung und Durcharbeitung jedoch kaum möglich ist. \nUm diesen Problemen konstruktiv zu begegnen, wurde LitU - Literatur und Unterlagen ins Leben gerufen. Hier sollen insbesondere Studierende die von Dozenten genannte oder selbst entdeckte Literatur zu den Themen im Studium bewerten, können aber auch eigene Unterlagen, z.B. Zusammenfassungen, hochladen. \nAll dieses Material  ermöglicht es den Kommilitonen, sinnvolle Literatur von ungeeigneter Literatur zu unterscheiden und somit beim Lernen sehr gezielt vorzugehen. \nHinweis: Nach Öffnen der Website erscheint eine Eingabemaske. Bitte geben Sie dort folgende Daten ein: \nBenutzername: root \nPasswort: hallo123",
+    "logo": "LitU_Logo1.png",
+    "screenshots": [
+      "LitU_Screen1.jpg",
+      "LitU_Screen2.jpg",
+      "LitU_Screen3.jpg",
+      "LitU_Screen4.jpg"
+    ],
+    "download": [],
+    "gitHub": [],
+    "website": ["hiddenscripts.de/litu"],
+    "zielgruppe": "Studenten",
+    "jahrgang": "IT-2015"
+  }
+]
