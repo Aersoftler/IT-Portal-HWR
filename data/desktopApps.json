@@ -1,60 +1,21 @@
 [
   {
     "name": "BibFileGenerator",
-    "kurzbeschreibung": "Desktop-Anwendung zur Bearbeitung von *.bib-Dateien",
-    "beschreibung": "Sehr sehr tolltes Programm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
-    "logo": "BibFileGenerator/BibFileGeneratorLogo.png",
+    "kurzbeschreibung": "Mit dem BibFileGenerator lassen sich Bib-Dateien in einer grafischen Oberfläche bearbeiten",
+    "beschreibung": "Viele Studenten und Akademiker, aber auch viele andere Gruppen, benutzen Latex um Texte zu verfassen. Dabei wird in vielen Fällen aus Quellen zitiert. Latex bietet hier die Möglichkeit mit entsprechenden Befehlen, schnell Quellen in die Texte einzufüugen. Eine Bib-Datei wird benötigt, in der alle Quellen hinterlegt sind. Diese wird mit einer Syntax geschrieben, für die ein Laie eine gewissen Einarbeitungszeit braucht. Auch im Nachhinein wird einige Zeit gebraucht, um diese Datei zu pflegen.\nUm die Einarbeitungs- und Wartungszeiten zu verringern, wurde der BibFileGenerator entwickelt, welcher eine benutzerfreundliche Oberfläche schafft, mit der ein Anwender seine Quellen einfach und ohne viel Arbeit anlegen und verwalten kann. So spart er Zeit, die für das eigentliche Verfassen des Textes genutzt werden kann.",
+    "logo": "BFG_Logo.png",
     "screenshots": [
-      "BibFileGenerator/bib1.PNG",
-      "BibFileGenerator/bib2.png"
+      "BFG_Screen1.jpg",
+      "BFG_Screen2.jpg"
     ],
     "download": [
-      "BibFileGenerator/BibFileGenerator.jar"
+      "BibFileGenerator.jar"
     ],
     "gitHub": [
       "https://github.com/mboskamp/BibFileGenerator"
     ],
-    "website": [
-      "https://google.de"
-    ]
-  },
-  {
-    "name": "Generator",
-    "kurzbeschreibung": "Desktop-Anwendung zur Bearbeitung von *.bib-Dateien",
-    "beschreibung": "Sehr sehr tolltes Programm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
-    "logo": "BibFileGenerator/BibFileGeneratorLogo.png",
-    "screenshots": [
-      "BibFileGenerator/bib1.PNG",
-      "BibFileGenerator/bib2.png"
-    ],
-    "download": [],
-    "gitHub": [],
-    "website": []
-  },
-  {
-    "name": "FileGen",
-    "kurzbeschreibung": "Desktop-Anwendung zur Bearbeitung von *.bib-Dateien",
-    "beschreibung": "Sehr sehr tolltes Programm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
-    "logo": "BibFileGenerator/BibFileGeneratorLogo.png",
-    "screenshots": [
-      "BibFileGenerator/bib1.PNG",
-      "BibFileGenerator/bib2.png"
-    ],
-    "download": [],
-    "gitHub": [],
-    "website": []
-  },
-  {
-    "name": "File",
-    "kurzbeschreibung": "Desktop-Anwendung zur Bearbeitung von *.bib-Dateien",
-    "beschreibung": "Sehr sehr tolltes Programm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,",
-    "logo": "BibFileGenerator/BibFileGeneratorLogo.png",
-    "screenshots": [
-      "BibFileGenerator/bib1.PNG",
-      "BibFileGenerator/bib2.png"
-    ],
-    "download": [],
-    "gitHub": [],
-    "website": []
+    "website": [],
+    "zielgruppe": "jeder",
+    "jahrgang": "IT-2015"
   }
 ]
