@@ -10,7 +10,7 @@ module.controller(
                 $scope.mobileApp = {
                     "name": app.name,
                     "url": detailMobileAppUrl + '/' + app.name,
-                    "logo": '/pic/' + app.name + '/' + app.logo
+                    "logo": picUrl + '/' + app.name + '/' + app.logo
                 };
             }
         });
@@ -22,7 +22,7 @@ module.controller(
                 $scope.desktopApp = {
                     "name": app.name,
                     "url": detailDesktopAppUrl + '/' + app.name,
-                    "logo": '/pic/' + app.name + '/' + app.logo
+                    "logo": picUrl + '/' + app.name + '/' + app.logo
                 };
             }
         });
@@ -33,7 +33,7 @@ module.controller(
                 $scope.embeddedApp = {
                     "name": app.name,
                     "url": detailEmbeddedAppUrl + '/' + app.name,
-                    "logo": '/pic/' + app.name + '/' + app.logo
+                    "logo": picUrl + '/' + app.name + '/' + app.logo
                 }
             }
         });
@@ -44,7 +44,7 @@ module.controller(
                 $scope.website = {
                     "name": app.name,
                     "url": detailWebsiteUrl + '/' + app.name,
-                    "logo": '/pic/' + app.name + '/' + app.logo
+                    "logo": picUrl + '/' + app.name + '/' + app.logo
                 };
             }
         })
