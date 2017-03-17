@@ -27,36 +27,12 @@ app.get("/kontakt", function (req, res) {
     res.sendFile(path.join(htmlPath, "kontakt.html"));
 });
 
-app.get("/details", function (req, res) {
-    res.sendFile(path.join(htmlPath, "details.html"));
-});
-
-app.get("/uebersicht", function (req, res) {
-    res.sendFile(path.join(htmlPath, "uebersicht.html"));
-});
-
 app.get("/footer", function (req, res) {
     res.sendFile(path.join(htmlPath, "footer.html"));
 });
 
 app.get("/header", function (req, res) {
     res.sendFile(path.join(htmlPath, "header.html"));
-});
-
-app.post("/desktopApp", function (req, res) {
-    res.send(readJsonFile(desktopAppFile));
-});
-
-app.post("/embeddedApp", function (req, res) {
-    res.send(readJsonFile(embeddedAppFile));
-});
-
-app.post("/mobileApp", function (req, res) {
-    res.send(readJsonFile(mobileAppFile));
-});
-
-app.post("/website", function (req, res) {
-    res.send(readJsonFile(websiteFile));
 });
 
 app.get("/details/:typ/:name", function (req, res) {

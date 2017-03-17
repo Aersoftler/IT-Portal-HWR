@@ -3,58 +3,42 @@ module = angular.module("home", []);
 module.controller(
     'carrouselCtrl',
     function ($scope, $http) {
-        $http.post('/mobileApp').then(function (response) {
+        let carrouselApps = [];
+
+        function buildCarrouselScope(response, url) {
             const applications = response.data;
             if (response.data.length > 0) {
                 const app = applications[Math.floor(Math.random() * applications.length)];
-                $scope.mobileApp = {
+                carrouselApps.push({
                     "name": app.name,
-                    "url": detailMobileAppUrl + '/' + app.name,
-                    "logo": picUrl + '/' + app.name + '/' + app.logo
-                };
+                    "url": url + '/' + app.name,
+                    "logo": buildLogoUrl(app)
+                });
+            } else {
+                carrouselApps.push({});
             }
+        }
+
+        $http.post('/mobileApp').then(function (response) {
+            buildCarrouselScope(response, detailMobileAppUrl);
         });
         $http.post('/desktopApp').then(function (response) {
-            const applications = response.data;
-            if (response.data.length > 0) {
-                const number = Math.floor(Math.random() * applications.length);
-                const app = applications[number];
-                $scope.desktopApp = {
-                    "name": app.name,
-                    "url": detailDesktopAppUrl + '/' + app.name,
-                    "logo": picUrl + '/' + app.name + '/' + app.logo
-                };
-            }
+            buildCarrouselScope(response, detailDesktopAppUrl);
         });
         $http.post('/embeddedApp').then(function (response) {
-            const applications = response.data;
-            if (response.data.length > 0) {
-                const app = applications[Math.floor(Math.random() * applications.length)];
-                $scope.embeddedApp = {
-                    "name": app.name,
-                    "url": detailEmbeddedAppUrl + '/' + app.name,
-                    "logo": picUrl + '/' + app.name + '/' + app.logo
-                }
-            }
+            buildCarrouselScope(response, detailEmbeddedAppUrl);
         });
         $http.post('/website').then(function (response) {
-            const applications = response.data;
-            if (response.data.length > 0) {
-                const app = applications[Math.floor(Math.random() * applications.length)];
-                $scope.website = {
-                    "name": app.name,
-                    "url": detailWebsiteUrl + '/' + app.name,
-                    "logo": picUrl + '/' + app.name + '/' + app.logo
-                };
-            }
-        })
+            buildCarrouselScope(response, detailWebsiteUrl);
+        });
+        $scope.carrouselApps = carrouselApps;
     }
 );
 
-function buildScope(response, $scope, url) {
+function buildUeberblickScope(response, $scope, url) {
     if (response.data.length > 0) {
         $scope.apps = response.data;
-        for (let i = 0; i <= response.data.length - 1; i++) {
+        for (let i in response.data) {
             $scope.apps[i].url = url + '/' + response.data[i].name;
         }
     } else {
@@ -66,7 +50,7 @@ module.controller(
     'desktopAppCtrl',
     function ($scope, $http) {
         $http.post('/desktopApp').then(function (response) {
-            buildScope(response, $scope, detailDesktopAppUrl);
+            buildUeberblickScope(response, $scope, detailDesktopAppUrl);
         })
     }
 );
@@ -75,7 +59,7 @@ module.controller(
     'mobileAppCtrl',
     function ($scope, $http) {
         $http.post('/mobileApp').then(function (response) {
-            buildScope(response, $scope, detailMobileAppUrl);
+            buildUeberblickScope(response, $scope, detailMobileAppUrl);
         })
     }
 );
@@ -84,7 +68,7 @@ module.controller(
     'embeddedAppCtrl',
     function ($scope, $http) {
         $http.post('/embeddedApp').then(function (response) {
-            buildScope(response, $scope, detailEmbeddedAppUrl);
+            buildUeberblickScope(response, $scope, detailEmbeddedAppUrl);
         })
     }
 );
@@ -93,7 +77,7 @@ module.controller(
     'websiteCtrl',
     function ($scope, $http) {
         $http.post('/website').then(function (response) {
-            buildScope(response, $scope, detailWebsiteUrl);
+            buildUeberblickScope(response, $scope, detailWebsiteUrl);
         })
     }
 );

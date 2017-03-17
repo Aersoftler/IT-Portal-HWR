@@ -25,42 +25,25 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox" ng-controller="carrouselCtrl">
                 <div class="item active">
-                    <a href="{{desktopApp.url}}">
-                        <img id="item0" ng-src="{{desktopApp.logo}}">
+                    <a href="\ueber_uns">
+                        <img id="item0" src="/images/ITPlattformLogo.png">
                         <div class="carousel-caption">
-                            <h2>{{desktopApp.name}}</h2>
+                            <h2>Über diese Internetseite</h2>
                         </div>
                     </a>
                 </div>
 
-                <div class="item">
-                    <a href="{{mobileApp.url}}">
-                        <img id="item1" ng-src="{{mobileApp.logo}}">
+                <div class="item" ng-repeat="app in carrouselApps">
+                    <a href="{{app.url}}">
+                        <img ng-src="{{app.logo}}">
                         <div class="carousel-caption">
-                            <h2>{{mobileApp.name}}</h2>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="{{website.url}}">
-                        <img id="item2" ng-src="{{website.logo}}">
-                        <div class="carousel-caption">
-                            <h2>{{website.name}}</h2>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="{{embeddedApp.url}}">
-                        <img id="item3" ng-src="{{embeddedApp.logo}}">
-                        <div class="carousel-caption">
-                            <h2>{{embeddedApp.name}}</h2>
+                            <h2>{{app.name}}</h2>
                         </div>
                     </a>
                 </div>

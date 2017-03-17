@@ -5,17 +5,16 @@ module.controller(
     function ($scope, $http) {
         const location = window.location.href;
         $scope.nameFilter = location.substring(location.lastIndexOf('/') + 1);
-        let j = 0;
-        $scope.results = [];
+        let results = [];
         function fillScopeResults(response, url) {
-            for (let i = 0; i < response.data.length; i++, j++) {
+            for (let i in response.data) {
                 app = response.data[i];
-                $scope.results[j] = {
+                results.push({
                     "name": app.name,
                     "kurzbeschreibung": app.kurzbeschreibung,
-                    "logo": url + '/' + app.logo,
+                    "logo": buildLogoUrl(app),
                     "url": url + '/' + app.name
-                };
+                });
             }
         }
 
@@ -30,6 +29,7 @@ module.controller(
         });
         $http.post('/website').then(function (response) {
             fillScopeResults(response, detailWebsiteUrl);
-        })
+        });
+        $scope.results = results;
     }
 );
