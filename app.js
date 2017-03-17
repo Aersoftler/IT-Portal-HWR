@@ -35,6 +35,22 @@ app.get("/header", function (req, res) {
     res.sendFile(path.join(htmlPath, "header.html"));
 });
 
+app.post("/desktopApp", function (req, res) {
+    res.send(readJsonFile(desktopAppFile));
+});
+
+app.post("/embeddedApp", function (req, res) {
+    res.send(readJsonFile(embeddedAppFile));
+});
+
+app.post("/mobileApp", function (req, res) {
+    res.send(readJsonFile(mobileAppFile));
+});
+
+app.post("/website", function (req, res) {
+    res.send(readJsonFile(websiteFile));
+});
+
 app.get("/details/:typ/:name", function (req, res) {
     res.sendFile(path.join(htmlPath, "details.html"));
 });
