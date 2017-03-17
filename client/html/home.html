@@ -31,7 +31,7 @@
             <div class="carousel-inner" role="listbox" ng-controller="carrouselCtrl">
                 <div class="item active">
                     <a href="{{desktopApp.url}}">
-                        <img id="item0" ng-src="{{desktopApp.logo}}" alt="Chania">
+                        <img id="item0" ng-src="{{desktopApp.logo}}">
                         <div class="carousel-caption">
                             <h2>{{desktopApp.name}}</h2>
                         </div>
@@ -40,7 +40,7 @@
 
                 <div class="item">
                     <a href="{{mobileApp.url}}">
-                        <img id="item1" ng-src="{{mobileApp.logo}}" alt="Chania">
+                        <img id="item1" ng-src="{{mobileApp.logo}}">
                         <div class="carousel-caption">
                             <h2>{{mobileApp.name}}</h2>
                         </div>
@@ -49,7 +49,7 @@
 
                 <div class="item">
                     <a href="{{website.url}}">
-                        <img id="item2" ng-src="{{website.logo}}" alt="Chania">
+                        <img id="item2" ng-src="{{website.logo}}">
                         <div class="carousel-caption">
                             <h2>{{website.name}}</h2>
                         </div>
@@ -58,7 +58,7 @@
 
                 <div class="item">
                     <a href="{{embeddedApp.url}}">
-                        <img id="item3" ng-src="{{embeddedApp.logo}}" alt="Chania">
+                        <img id="item3" ng-src="{{embeddedApp.logo}}">
                         <div class="carousel-caption">
                             <h2>{{embeddedApp.name}}</h2>
                         </div>
@@ -87,28 +87,24 @@
                 <div><strong>App</strong></div>
                 <div class="col-sm-offset-1" ng-controller="mobileAppCtrl">
                     <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
-                    <li><a href="">weitere Apps...</a></li>
                 </div>
             </div>
             <div class="well col-sm-3">
                 <div><strong>Desktop-Anwendung</strong></div>
                 <div class="col-sm-offset-1" ng-controller="desktopAppCtrl">
                     <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
-                    <li><a href="">weitere Anwendung...</a></li>
                 </div>
             </div>
             <div class="well col-sm-3">
                 <div><strong>Webseite</strong></div>
                 <div class="col-sm-offset-1" ng-controller="websiteCtrl">
                     <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
-                    <li><a href="">weitere Webseiten...</a></li>
                 </div>
             </div>
             <div class="well col-sm-3">
                 <div><strong>Embedded-Software</strong></div>
                 <div class="col-sm-offset-1" ng-controller="embeddedAppCtrl">
                     <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
-                    <li><a href="">weitere Embedded-Software...</a></li>
                 </div>
             </div>
         </div>
