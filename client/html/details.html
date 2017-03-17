@@ -43,112 +43,14 @@
         </div>
         <div class="col-sm-6">
             <div class="well">
+
                 {{appli.beschreibung}}
+
             </div>
 
         </div>
     </div>
-    <h2>Kommentare</h2>
-    <button onClick="$('#entryForm').slideToggle('slow')">Kommentar verfassen</button>
-    <form method="POST" action="" id="entryForm" onSubmit="ajaxSubmit(this); return false;">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label for="name">Name: </label>
-                    <input type="text" id="name" required
-                           placeholder="Dein Name" class="form-control" name="name"/>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label for="email">E-Mail: </label>
-                    <input type="email" id="email"
-                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
-                           placeholder="Bitte gib eine gültige Email-Adresse ein" class="form-control" name="email"/>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <label for="birthday">Geburtstag: </label>
-                <input type="date" id="birthday" required
-                       placeholder="Bitte gib Deinen Geburtstag ein" class="form-control" name="birthday"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="message">Deine Nachricht: </label>
-            <textarea cols="30" rows="5" class="form-control" id="message" placeholder="Bitte schreib Deine Nachricht" name="message"></textarea>
-        </div>
-        <div class="form-group">
-            <div class="col-md-6 text-center">
-                <button type="reset" class="btn btn-default">
-                    <span class="glyphicon glyphicon-remove"></span>
-                    Zurücksetzen
 
-                </button>
-            </div>
-            <div class="col-md-6 text-center">
-                <button type="submit" class="btn btn-success">
-                    <span class="glyphicon glyphicon-ok"></span>
-                    Abschicken
-                </button>
-
-            </div>
-        </div>
-    </form>
-        <div class="well">
-            <div class="row">
-                <div class="col-md-1 h1">
-                    1
-                </div>
-                <div class="col-md-11">
-                    <div class="row">
-                        <div class="col-md-11">
-                            <strong>Robin</strong> schrieb ...
-                        </div>
-                        <div class="col-md-1 text-right">
-                            <span class="label label-default">05.01.2016</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>
-                                <em>
-                                    Hey, was für eine tolle Seite! Weiter so! Bitte besucht doch auch mal diese Seite: <a
-                                        href="http://www.hwr-berlin.de" target="_blank">www.hwr-berlin.de</a>
-                                </em>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            Email: <a href="mailto:e_bedemann@doz.hwr-berlin.de">e_bedemann@doz.hwr-berlin.de</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <nav class="text-center">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Zurück">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Vor">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -188,7 +90,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 </div>
 <div id="foo"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>

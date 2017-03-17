@@ -1,8 +1,8 @@
 [
   {
-    "name": "SCIM (Schedule Change Information Mail)",
+    "name": "SCIM",
     "kurzbeschreibung": "SCIM ist ein Service, der zukünftig Studierende per E-Mail über Stundenplanänderungen informieren soll.",
-    "beschreibung": "Da Studierende langfristige Stundenplanänderungen oft nicht mitbekommen, wurde der Service SCIM entwickelt, um dieses Problem zu lösen. \nJeder Studierende kann beliebige Kurse abonnieren, für die er bei Stundenplanänderungen informiert werden möchte. Das Abonnieren eines Kurses soll im IPOOL stattfinden. Jeden Abend vergleicht SCIM den Stundenplan vom Vortag mit dem aktuellen Plan. Wenn eine oder mehrere Änderungen gefunden werden, werden E-Mails an alle Abonnenten des entsprechenden Kurses verschickt. \nIn diesen stehen alle Änderungen, die seit dem Vortag gemacht wurden. So verpasst niemand jemals wieder eine Stundenplanänderung!",
+    "beschreibung": "Da Studierende langfristige Stundenplanänderungen oft nicht mitbekommen, wurde der Service SCIM (Schedule Change Information Mail) entwickelt, um dieses Problem zu lösen. \n\nJeder Studierende kann beliebige Kurse abonnieren, für die er bei Stundenplanänderungen informiert werden möchte. Das Abonnieren eines Kurses soll im IPOOL stattfinden. Jeden Abend vergleicht SCIM den Stundenplan vom Vortag mit dem aktuellen Plan. Wenn eine oder mehrere Änderungen gefunden werden, werden E-Mails an alle Abonnenten des entsprechenden Kurses verschickt. \n \nIn diesen stehen alle Änderungen, die seit dem Vortag gemacht wurden. So verpasst niemand jemals wieder eine Stundenplanänderung!",
     "logo": "SCIM_Logo.PNG",
     "screenshots": [
       "SCIM_Screen1.PNG",
