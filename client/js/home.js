@@ -1,21 +1,21 @@
 module = angular.module("home", []);
 
 module.controller(
-    'carrouselCtrl',
+    'carouselCtrl',
     function ($scope, $http) {
-        let carrouselApps = [];
+        let carouselApps = [];
 
         function buildCarrouselScope(response, url) {
             const applications = response.data;
             if (response.data.length > 0) {
                 const app = applications[Math.floor(Math.random() * applications.length)];
-                carrouselApps.push({
+                carouselApps.push({
                     "name": app.name,
                     "url": url + '/' + app.name,
                     "logo": buildLogoUrl(app)
                 });
             } else {
-                carrouselApps.push({});
+                carouselApps.push({});
             }
         }
 
@@ -31,7 +31,7 @@ module.controller(
         $http.post('/website').then(function (response) {
             buildCarrouselScope(response, detailWebsiteUrl);
         });
-        $scope.carrouselApps = carrouselApps;
+        $scope.carouselApps = carouselApps;
     }
 );
 

@@ -1,3 +1,6 @@
+/**
+ * Datei, in der alles um die Urls definiert ist
+ */
 const detailUrl = "/details";
 const desktopUrl = "/desktopApp";
 const mobileAppUrl = "/mobileApp";

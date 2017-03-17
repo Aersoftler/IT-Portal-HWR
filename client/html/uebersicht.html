@@ -23,6 +23,7 @@
         </div>
     </div>
 </div>
+<!-- Comoboxen zur Filterung -->
 <div class="container">
     <div class="col-sm-3">
         <h3>Typ</h3>
@@ -61,9 +62,11 @@
     </div>
 </div>
 <div class="container" ng-controller="resultsCtrl">
-    <h6 id="anzahlLoesungen">{{"xxx Lösungen gefunden"}}</h6>
+    <h6 id="anzahlLoesungen">{{filteredResults.length + " Lösung(en) gefunden"}}</h6>
     <hr>
-    <div class="well well-sm clearfix" ng-repeat="result in results | filter: nameFilter | orderBy: 'name'">
+    <!-- eigentliche Suchergebnisse -->
+    <div class="well well-sm clearfix"
+         ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults">
         <div class="col-sm-4">
             <img class="img-responsive" ng-src="{{result.logo}}">
         </div>
