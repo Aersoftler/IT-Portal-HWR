@@ -121,3 +121,8 @@
     margin-bottom: -20px;
     margin-top: 40px;
 }
+
+.detailBeschreibung {
+    white-space: pre-line;
+    text-align: justify;
+}
