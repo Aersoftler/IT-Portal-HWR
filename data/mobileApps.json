@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "name": "HWRNewsticker",
+    "kurzbeschreibung": "Mit dem HWRNewticker sind die Studierenden der HWR immer topinformiert über Neuigkeiten zu ihrem Studium.",
+    "beschreibung": "Mit der Smartphone-Applikation „HWRNewsticker“ haben die Studierenden stets den Überblick über wichtige Neuigkeiten zu ihrem Studium und sind dadurch besser organisiert. \nDank einer praktischen Übersicht in Form eines Newsfeeds müssen Termine für Abgabefristen, Stundenplanänderungen oder andere Informationen nicht mehr mühsam aus verschiedenen Quellen wie E-Mails, iPool oder Moodle entnommen werden. Somit kann es nicht mehr so leicht passieren, dass wichtige Informationen erst kurzfristig entdeckt werden oder sogar ganz übersehen werden. Verbreitet werden die Neuigkeiten sowohl von den Dozenten als auch von den Kurssprechern. \nEin weiteres nützliches Feature ist der Chat, über den sich die Studierenden bei auftretenden Fragen oder Diskussionspunkten zu studienbezogenen Themen miteinander austauschen können. Somit wurde eine zentrale Kommunikationsplattform für die Studierenden geschaffen, wodurch auch Leute, die generell oder für studienbezogene Zwecke nicht die verbreiteten Social-Media-Dienste verwenden wollen, zufrieden zu stellen sind und sich nicht benachteiligt fühlen müssen, da alles Wichtige über diese App verbreitet wird.",
+    "logo": "HWRNewsticker_Logo.png",
+    "screenshots": [
+      "HWRNewsticker_Screen1.png",
+      "HWRNewsticker_Screen2.png",
+      "HWRNewsticker_Screen3.png",
+      "HWRNewsticker_Screen4.png"
+    ],
+    "download": [],
+    "gitHub": [],
+    "website": [],
+    "zielgruppe": [
+      "Studierende",
+      "Dozenten"
+    ],
+    "jahrgang": "IT-2015"
+  }
+]

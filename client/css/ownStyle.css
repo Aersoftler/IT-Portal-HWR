@@ -2,6 +2,11 @@
 .carousel-inner > .item > a > img {
     margin: auto;
     min-width: 200px;
+    max-height: 400px;
+}
+
+.img-responsive{
+    max-height: 350px;
 }
 
 .blackArrow {
