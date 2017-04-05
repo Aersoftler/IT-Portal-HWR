@@ -20,70 +20,70 @@ const picPath = __dirname + "/pics"; //Pfad zu Bildern
 const programPath = __dirname + "/program"; //Pfad zu herunterladbaren Dateien
 
 /**
- * @send Startseites
+ * Startseites
  */
 app.get("/", function (req, res) {
     res.sendFile(path.join(htmlPath, "home.html"));
 });
 
 /**
- * @send Über Uns - Seite
+ * Über Uns - Seite
  */
 app.get("/ueber_uns", function (req, res) {
     res.sendFile(path.join(htmlPath, "ueber_uns.html"));
 });
 
 /**
- * @send Impressum - Seite
+ * Impressum - Seite
  */
 app.get("/impressum", function (req, res) {
     res.sendFile(path.join(htmlPath, "impressum.html"));
 });
 
 /**
- * @send Kontakt - Seite
+ * Kontakt - Seite
  */
 app.get("/kontakt", function (req, res) {
     res.sendFile(path.join(htmlPath, "kontakt.html"));
 });
 
 /**
- * @send Footer
+ * Footer
  */
 app.get("/footer", function (req, res) {
     res.sendFile(path.join(htmlPath, "footer.html"));
 });
 
 /**
- * @send Header
+ * Header
  */
 app.get("/header", function (req, res) {
     res.sendFile(path.join(htmlPath, "header.html"));
 });
 
 /**
- * @send alle Desktop - Programme
+ * alle Desktop - Programme
  */
 app.post("/desktopApp", function (req, res) {
     res.send(readJsonFile(desktopAppFile));
 });
 
 /**
- * @send alle Embedded - Programme
+ * alle Embedded - Programme
  */
 app.post("/embeddedApp", function (req, res) {
     res.send(readJsonFile(embeddedAppFile));
 });
 
 /**
- * @send alle Apps
+ * alle Apps
  */
 app.post("/mobileApp", function (req, res) {
     res.send(readJsonFile(mobileAppFile));
 });
 
 /**
- * @send alle Webseiten
+ * alle Webseiten
  */
 app.post("/website", function (req, res) {
     res.send(readJsonFile(websiteFile));
@@ -92,7 +92,7 @@ app.post("/website", function (req, res) {
 /**
  * @param Typ der Anwendung
  * @param Name der Anwendung
- * @send Detail - Seite
+ * Detail - Seite
  */
 app.get("/details/:typ/:name", function (req, res) {
     res.sendFile(path.join(htmlPath, "details.html"));
@@ -108,7 +108,7 @@ function getProduct(products, req) {
 }
 
 /**
- * @send passende Anwednung zum Client
+ * passende Anwednung an den Client
  */
 app.post("/details/:typ/:name", function (req, res) {
     if (req.params.typ == "desktopApp") {
@@ -144,21 +144,21 @@ function readJsonFile(file) {
 }
 
 /**
- * @send Datei zum herunterladen
+ * Datei zum herunterladen
  */
 app.get("/download/:download", function (req, res) {
     res.sendFile(path.join(programPath, String(req.params.download)));
 });
 
 /**
- * @send passendes Bild
+ * passendes Bild
  */
 app.get("/pic/:name/:pic", function (req, res) {
     res.sendFile(path.join(picPath, String(req.params.name), String(req.params.pic)));
 });
 
 /**
- * @send Übersichtsseite
+ * Übersichtsseite
  */
 app.get("/uebersicht/:search", function (req, res) {
     res.sendFile(path.join(htmlPath, "uebersicht.html"));
@@ -166,7 +166,7 @@ app.get("/uebersicht/:search", function (req, res) {
 
 /**
  * Wenn eine leere Suche gestartet wird
- * @send Übersichtsseite
+ * Übersichtsseite
  */
 app.get("/uebersicht", function (req, res) {
     res.sendFile(path.join(htmlPath, "uebersicht.html"));
@@ -180,7 +180,7 @@ function getAllProducts() {
 }
 
 /**
- * @send alle Anwendungen
+ * alle Anwendungen
  */
 app.get("/allProducts", function (req, res) {
     res.send(getAllProducts());
