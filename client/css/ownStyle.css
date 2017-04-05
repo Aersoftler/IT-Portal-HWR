@@ -129,8 +129,12 @@
     margin-top: 40px;
 }
 
-.well.ownWell {
+.well.ownWell, .well.detailWell {
     text-align: justify;
+}
+
+.well.detailWell {
+    white-space: pre-line;
 }
 
 .ng-cloak {
