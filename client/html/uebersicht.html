@@ -12,13 +12,13 @@
     <script src="/js/header.js"></script>
     <script src="/js/url.js"></script>
 </head>
-<body ng-controller="resultsCtrl">
+<body ng-controller="resultsCtrl" class="ng-cloak">
 <div id="header"></div>
 <div class="jumbotron jumbotronOuer jumbotronUebersicht">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Suchergebnisse für {{nameFilter}}</h1>
+                <h1>Suchergebnisse für "{{nameFilter}}"</h1>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
     <h6 id="anzahlLoesungen">{{filteredResults.length + " Lösung(en) gefunden"}}</h6>
     <hr>
     <!-- eigentliche Suchergebnisse -->
-    <div class="well well-sm clearfix"
+    <div class="well well-sm clearfix ownWell"
          ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults">
         <div class="col-sm-4">
             <img class="img-responsive" ng-src="{{result.logo}}">

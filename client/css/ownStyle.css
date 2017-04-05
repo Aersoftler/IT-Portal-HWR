@@ -1,6 +1,6 @@
 .homeCarouselImage {
     margin: auto;
-    height: 194px;
+    height: 194px !important;
 }
 
 .detailCarouselImage {
@@ -129,7 +129,14 @@
     margin-top: 40px;
 }
 
-.detailBeschreibung {
-    white-space: pre-line;
+.well.ownWell {
     text-align: justify;
+}
+
+.ng-cloak {
+    display: none !important;
+}
+
+.carousel-caption > h2 {
+    color: #0f0f0f;
 }
