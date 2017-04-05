@@ -31,7 +31,7 @@
             <div class="carousel-inner" role="listbox" ng-controller="carouselCtrl">
                 <div class="item active">
                     <a href="\ueber_uns">
-                        <img src="/images/ITPlattformLogo.png">
+                        <img class="homeCarouselImage" src="/images/ITPlattformLogo.png">
                         <div class="carousel-caption">
                             <h2>Über diese Internetseite</h2>
                         </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="item" ng-repeat="app in carouselApps">
                     <a href="{{app.url}}">
-                        <img ng-src="{{app.logo}}">
+                        <img class="homeCarouselImage" ng-src="{{app.logo}}">
                         <div class="carousel-caption">
                             <h2>{{app.name}}</h2>
                         </div>

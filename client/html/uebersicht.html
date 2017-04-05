@@ -12,13 +12,13 @@
     <script src="/js/header.js"></script>
     <script src="/js/url.js"></script>
 </head>
-<body>
+<body ng-controller="resultsCtrl">
 <div id="header"></div>
 <div class="jumbotron jumbotronOuer jumbotronUebersicht">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Suchergebnisse</h1>
+                <h1>Suchergebnisse für {{nameFilter}}</h1>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
         </select>
     </div>
 </div>
-<div class="container" ng-controller="resultsCtrl">
+<div class="container">
     <h6 id="anzahlLoesungen">{{filteredResults.length + " Lösung(en) gefunden"}}</h6>
     <hr>
     <!-- eigentliche Suchergebnisse -->

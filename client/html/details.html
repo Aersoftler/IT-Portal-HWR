@@ -65,10 +65,10 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="{{appli.logo}}">
+                                <img class="detailCarouselImage" src="{{appli.logo}}">
                             </div>
                             <div class="item" ng-repeat="screenshot in appli.screenshots">
-                                <img ng-src="{{screenshot}}">
+                                <img class="detailCarouselImage" ng-src="{{screenshot}}">
                             </div>
                             <!-- Left and right controls -->
                             <a class="left carousel-control" href="#screenshotCarousel" role="button" data-slide="prev">

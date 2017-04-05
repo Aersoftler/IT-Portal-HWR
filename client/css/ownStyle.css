@@ -1,8 +1,10 @@
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.homeCarouselImage {
     margin: auto;
-    min-width: 200px;
-    max-height: 400px;
+    height: 194px;
+}
+
+.detailCarouselImage {
+    margin: auto;
 }
 
 .img-responsive{
