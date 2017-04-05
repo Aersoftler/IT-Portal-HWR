@@ -47,5 +47,27 @@
     "website": [],
     "zielgruppe": "Studenten",
     "jahrgang": "IT-2015"
+  },
+  {
+    "name": "E-Learning@HWR",
+    "kurzbeschreibung": "E-Learning@HWR ist eine webbasierte E-Learning Software.",
+    "beschreibung": "Auf der Webseite E-Learning@HWR können Dozenten ihre Vorlesungen durch E-Learning Inhalte erweitern. Sie können verschiedene Unterrichtsmaterialien in einem Modul bereitstellen. Diese Materialien können, beispielsweise Texte, Bilder oder auch Youtube-Videos sein.\nDie Dozenten können zu diesen Inhalten Wissenstests erstellen. In diesen Tests können sie Fragen definieren, mit denen die Studierenden ihr erlerntes Wissen überprüfen können. Aus den Ergebnissen dieser Tests, können die Dozenten Rückschlüsse auf den Erfolg ihrer Vorlesungen prüfen.\nDie Studierenden können wiederum die von den Dozenten zur Verfügung gestellten Inhalte bearbeiten und anschließend die Wissenstests durchführen. Auch die Studierenden erhalten nach dem Ausfüllen des Tests eine Auswertung ihrer Antworten und können somit Rückschlüsse auf ihren eigenen Wissensstand stellen.\n\nDie Internetseite ist nicht immer erreichbar.",
+    "logo": "logo.png",
+    "screenshots": [
+      "homepage.png",
+      "modul.png",
+      "wissenstest.png",
+      "statistik.png",
+      "video.png"
+    ],
+    "download": [],
+    "gitHub": [
+      "https://github.com/mhoellner/ELearning"
+    ],
+    "website": [
+      "http://hwr-elearning.ddnss.de"
+    ],
+    "zielgruppe": "Studenten",
+    "jahrgang": "IT-2015"
   }
 ]
