@@ -133,6 +133,17 @@
     text-align: justify;
 }
 
+@media (min-width: 992px) {
+    #addComment {
+        padding-bottom: 50px;
+    }
+}
+
+#commentTitle{
+    margin-top: 0px;
+}
+
+
 .well.detailWell {
     white-space: pre-line;
 }

@@ -17,6 +17,21 @@
       "Studierende",
       "Dozenten"
     ],
-    "jahrgang": "IT-2015"
+    "jahrgang": "IT-2015",
+    "kommentare":[
+      {
+        "user": "Peter",
+        "message": "Tolle App!",
+        "timestamp": "2017-03-17T17:51Z"
+      },{
+        "user": "Lena",
+        "message": "Ich bin begeistert!",
+        "timestamp": "2017-03-10T13:29Z"
+      },{
+        "user": "Paul",
+        "message": "Super!",
+        "timestamp": "2017-03-13T13:29Z"
+      }
+    ]
   }
 ]

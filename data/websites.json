@@ -29,7 +29,18 @@
     "gitHub": [],
     "website": ["http://www.hiddenscripts.de/litu"],
     "zielgruppe": "Studenten",
-    "jahrgang": "IT-2015"
+    "jahrgang": "IT-2015",
+    "kommentare":[
+      {
+        "user": "Sophie",
+        "message": "Die Seite hilft mir sehr!",
+        "timestamp": "2017-03-17T17:51Z"
+      },{
+        "user": "Tim",
+        "message": "Gut, dass es so eine Möglichkeit gibt!",
+        "timestamp": "2017-03-10T13:29Z"
+      }
+    ]
   },
   {
     "name": "LernTreff",
@@ -46,7 +57,14 @@
     "gitHub": [],
     "website": [],
     "zielgruppe": "Studenten",
-    "jahrgang": "IT-2015"
+    "jahrgang": "IT-2015",
+    "kommentare":[
+      {
+        "user": "Lisa",
+        "message": "Sehr gute Webiste!",
+        "timestamp": "2017-03-17T17:51Z"
+      }
+    ]
   },
   {
     "name": "E-Learning@HWR",
@@ -68,6 +86,17 @@
       "http://hwr-elearning.ddnss.de"
     ],
     "zielgruppe": "Studenten",
-    "jahrgang": "IT-2015"
+    "jahrgang": "IT-2015",
+    "kommentare":[
+      {
+        "user": "Larissa",
+        "message": "Hat mir bei meiner letzten Klausur sehr geholfen!",
+        "timestamp": "2017-03-17T17:51Z"
+      },{
+        "user": "Ben",
+        "message": "Sehr gut!",
+        "timestamp": "2017-03-10T13:29Z"
+      }
+    ]
   }
 ]
