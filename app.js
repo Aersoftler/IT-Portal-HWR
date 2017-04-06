@@ -61,6 +61,10 @@ app.get("/header", function (req, res) {
     res.sendFile(path.join(htmlPath, "header.html"));
 });
 
+app.get("/suchergebnisse", function (req, res) {
+    res.sendFile(path.join(htmlPath, "suchergebnisse.html"));
+});
+
 /**
  * alle Desktop - Programme
  */

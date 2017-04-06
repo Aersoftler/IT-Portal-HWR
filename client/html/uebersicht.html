@@ -65,16 +65,8 @@
     <h6 id="anzahlLoesungen">{{filteredResults.length + " Lösung(en) gefunden"}}</h6>
     <hr>
     <!-- eigentliche Suchergebnisse -->
-    <div class="well well-sm clearfix ownWell"
-         ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults">
-        <div class="col-sm-4">
-            <img class="img-responsive" ng-src="{{result.logo}}">
-        </div>
-        <div class="col-sm-8">
-            <h2><a href="{{result.url}}">{{result.name}}</a></h2>
-            <h5>{{result.kurzbeschreibung}}</h5>
-        </div>
-    </div>
+    <div class="well well-sm clearfix ownWell" die-suchergebnisse="result"
+         ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults"/>
 </div>
 <div id="foo"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>

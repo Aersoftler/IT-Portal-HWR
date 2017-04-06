@@ -33,3 +33,11 @@ module.controller(
         $scope.results = results;
     }
 );
+
+module.directive('dieSuchergebnisse', function () {
+    return {
+        priority: 0,
+        templateUrl: '/suchergebnisse',
+        restrict: 'A'
+    }
+});
