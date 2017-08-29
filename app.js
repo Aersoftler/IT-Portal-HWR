@@ -4,16 +4,13 @@
 
 const express = require("express");
 const app = express();
-const fs = require('fs');
 const path = require("path");
+const MongoClient = require('mongodb').MongoClient;
+
+const mongoUrl = "mongodb://localhost:27017/it-portal-hwr";
+const softwareCollection = "software";
 
 const htmlPath = __dirname + "/client/html"; // Pfad zu HTML-Dateien
-
-//Pfade zu JSON-Dateien
-const desktopAppFile = __dirname + "/data/desktopApps.json";
-const embeddedAppFile = __dirname + "/data/embeddedApps.json";
-const mobileAppFile = __dirname + "/data/mobileApps.json";
-const websiteFile = __dirname + "/data/websites.json";
 
 const picPath = __dirname + "/pics"; //Pfad zu Bildern
 
@@ -65,32 +62,73 @@ app.get("/suchergebnisse", function (req, res) {
     res.sendFile(path.join(htmlPath, "suchergebnisse.html"));
 });
 
+function getSoftwareByType(type, callback) {
+    MongoClient.connect(mongoUrl, function (err, db) {
+        if (err) throw err;
+        db.collection(softwareCollection).find({"type": type}, {"_id": false}).toArray(function (err, dbResult) {
+            if (err) throw err;
+            db.close();
+            callback(dbResult);
+        });
+    });
+}
+
+function getSoftwareByName(name, callback) {
+    MongoClient.connect(mongoUrl, function (err, db) {
+        if (err) throw err;
+        db.collection(softwareCollection).find({"name": name}, {"_id": false}).toArray(function (err, dbResult) {
+            if (err) throw err;
+            db.close();
+            callback(dbResult);
+        });
+    });
+}
+
+function getAllSoftware(callback) {
+    MongoClient.connect(mongoUrl, function (err, db) {
+        if (err) throw err;
+        db.collection(softwareCollection).find({}, {"_id": false}).toArray(function (err, dbResult) {
+            if (err) throw err;
+            db.close();
+            callback(dbResult);
+        });
+    });
+}
+
 /**
  * alle Desktop - Programme
  */
 app.post("/desktopApp", function (req, res) {
-    res.send(readJsonFile(desktopAppFile));
+    getSoftwareByType("desktop", function (result) {
+        res.send(result)
+    });
 });
 
 /**
  * alle Embedded - Programme
  */
 app.post("/embeddedApp", function (req, res) {
-    res.send(readJsonFile(embeddedAppFile));
+    getSoftwareByType("embedded", function (result) {
+        res.send(result)
+    });
 });
 
 /**
  * alle Apps
  */
 app.post("/mobileApp", function (req, res) {
-    res.send(readJsonFile(mobileAppFile));
+    getSoftwareByType("mobile", function (result) {
+        res.send(result)
+    });
 });
 
 /**
  * alle Webseiten
  */
 app.post("/website", function (req, res) {
-    res.send(readJsonFile(websiteFile));
+    getSoftwareByType("website", function (result) {
+        res.send(result)
+    });
 });
 
 /**
@@ -103,49 +141,13 @@ app.get("/details/:typ/:name", function (req, res) {
 });
 
 /**
- * @return Anwendung, welche den Namen hat, der aufgerufen werden soll
- */
-function getProduct(products, req) {
-    return products.filter(function (product) {
-        return product.name == req.params.name;
-    });
-}
-
-/**
  * passende Anwednung an den Client
  */
 app.post("/details/:typ/:name", function (req, res) {
-    if (req.params.typ == "desktopApp") {
-        const apps = readJsonFile(desktopAppFile);
-        res.send(getProduct(apps, req));
-    }
-    if (req.params.typ == "embeddedApp") {
-        const apps = readJsonFile(embeddedAppFile);
-        res.send(getProduct(apps, req));
-    }
-    if (req.params.typ == "mobileApp") {
-        const apps = readJsonFile(mobileAppFile);
-        res.send(getProduct(apps, req));
-    }
-    if (req.params.typ == "website") {
-        const sites = readJsonFile(websiteFile);
-        res.send(getProduct(sites, req));
-    }
+    getSoftwareByName(req.params.name, function (result) {
+        res.send(result);
+    });
 });
-
-/**
- * @param file, aus der gelesen werden soll
- * @return Daten als Array
- */
-function readJsonFile(file) {
-    try {
-        const data = fs.readFileSync(file);
-        return JSON.parse(data);
-    } catch (e) {
-        console.log(file + "konnte nicht gelesen werden " + e);
-        return [];
-    }
-}
 
 /**
  * Datei zum herunterladen
@@ -177,19 +179,14 @@ app.get("/uebersicht", function (req, res) {
 });
 
 /**
- * @return alle JSON als ein Array
- */
-function getAllProducts() {
-    return readJsonFile(desktopAppFile).concat(readJsonFile(mobileAppFile).concat(readJsonFile(embeddedAppFile).concat(readJsonFile(websiteFile))));
-}
-
-/**
  * alle Anwendungen
  */
 app.get("/allProducts", function (req, res) {
-    res.send(getAllProducts());
+    getAllSoftware(function (result) {
+        res.send(result);
+    });
 });
 
 app.use(express.static(__dirname + "/client"));
 app.listen(3000);
-console.log("Server ist gestartet");
+console.log("Server ist gestartet (localhost:3000)");

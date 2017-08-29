@@ -1,0 +1,160 @@
+{
+  "_id": {
+    "$oid": "599c49ae85896d579ae06c3d"
+  },
+  "name": "BibFileGenerator",
+  "kurzbeschreibung": "Mit dem BibFileGenerator lassen sich Bib-Dateien in einer grafischen Oberfläche bearbeiten.",
+  "beschreibung": "Viele Studenten und Akademiker, aber auch viele andere Gruppen, benutzen Latex um Texte zu verfassen. Dabei wird in vielen Fällen aus Quellen zitiert. Latex bietet hier die Möglichkeit mit entsprechenden Befehlen, schnell Quellen in die Texte einzufüugen. Eine Bib-Datei wird benötigt, in der alle Quellen hinterlegt sind. Diese wird mit einer Syntax geschrieben, für die ein Laie eine gewissen Einarbeitungszeit braucht. Auch im Nachhinein wird einige Zeit gebraucht, um diese Datei zu pflegen.\nUm die Einarbeitungs- und Wartungszeiten zu verringern, wurde der BibFileGenerator entwickelt, welcher eine benutzerfreundliche Oberfläche schafft, mit der ein Anwender seine Quellen einfach und ohne viel Arbeit anlegen und verwalten kann. So spart er Zeit, die für das eigentliche Verfassen des Textes genutzt werden kann.",
+  "logo": "BFG_Logo.png",
+  "screenshots": [
+    "BFG_Screen1.jpg",
+    "BFG_Screen2.jpg"
+  ],
+  "download": [
+    "BibFileGenerator.jar"
+  ],
+  "gitHub": [
+    "https://github.com/mboskamp/BibFileGenerator"
+  ],
+  "website": [],
+  "zielgruppe": "jeder",
+  "jahrgang": "IT-2015",
+  "type": "desktop"
+}
+{
+  "_id": {
+    "$oid": "599c49fe85896d579ae06c4f"
+  },
+  "name": "SCIM",
+  "kurzbeschreibung": "SCIM ist ein Service, der zukünftig Studierende per E-Mail über Stundenplanänderungen informieren soll.",
+  "beschreibung": "Da Studierende langfristige Stundenplanänderungen oft nicht mitbekommen, wurde der Service SCIM (Schedule Change Information Mail) entwickelt, um dieses Problem zu lösen.\n\nJeder Studierende kann beliebige Kurse abonnieren, für die er bei Stundenplanänderungen informiert werden möchte. Das Abonnieren eines Kurses soll im IPOOL stattfinden. Jeden Abend vergleicht SCIM den Stundenplan vom Vortag mit dem aktuellen Plan. Wenn eine oder mehrere Änderungen gefunden werden, werden E-Mails an alle Abonnenten des entsprechenden Kurses verschickt.\n\nIn diesen stehen alle Änderungen, die seit dem Vortag gemacht wurden. So verpasst niemand jemals wieder eine Stundenplanänderung!",
+  "logo": "SCIM_Logo.PNG",
+  "screenshots": [
+    "SCIM_Screen1.PNG",
+    "SCIM_Screen2.PNG",
+    "SCIM_Screen3.PNG"
+  ],
+  "download": [],
+  "gitHub": [
+    "https://github.com/SidneySteimel/scim"
+  ],
+  "website": [],
+  "zielgruppe": "Studierende",
+  "jahrgang": "IT-2015",
+  "type": "embedded"
+}
+{
+  "_id": {
+    "$oid": "599c4a2885896d579ae06c54"
+  },
+  "name": "HWRNewsticker",
+  "kurzbeschreibung": "Mit dem HWRNewticker sind die Studierenden der HWR immer topinformiert über Neuigkeiten zu ihrem Studium.",
+  "beschreibung": "Mit der Smartphone-Applikation „HWRNewsticker“ haben die Studierenden stets den Überblick über wichtige Neuigkeiten zu ihrem Studium und sind dadurch besser organisiert. \nDank einer praktischen Übersicht in Form eines Newsfeeds müssen Termine für Abgabefristen, Stundenplanänderungen oder andere Informationen nicht mehr mühsam aus verschiedenen Quellen wie E-Mails, iPool oder Moodle entnommen werden. Somit kann es nicht mehr so leicht passieren, dass wichtige Informationen erst kurzfristig entdeckt werden oder sogar ganz übersehen werden. Verbreitet werden die Neuigkeiten sowohl von den Dozenten als auch von den Kurssprechern. \nEin weiteres nützliches Feature ist der Chat, über den sich die Studierenden bei auftretenden Fragen oder Diskussionspunkten zu studienbezogenen Themen miteinander austauschen können. Somit wurde eine zentrale Kommunikationsplattform für die Studierenden geschaffen, wodurch auch Leute, die generell oder für studienbezogene Zwecke nicht die verbreiteten Social-Media-Dienste verwenden wollen, zufrieden zu stellen sind und sich nicht benachteiligt fühlen müssen, da alles Wichtige über diese App verbreitet wird.",
+  "logo": "HWRNewsticker_Logo.png",
+  "screenshots": [
+    "HWRNewsticker_Screen1.png",
+    "HWRNewsticker_Screen2.png",
+    "HWRNewsticker_Screen3.png",
+    "HWRNewsticker_Screen4.png"
+  ],
+  "download": [],
+  "gitHub": [],
+  "website": [],
+  "zielgruppe": [
+    "Studierende",
+    "Dozenten"
+  ],
+  "jahrgang": "IT-2015",
+  "type": "mobile"
+}
+{
+  "_id": {
+    "$oid": "599c4a4b85896d579ae06c5c"
+  },
+  "name": "HWR-Chat",
+  "kurzbeschreibung": "Der HWR-Chat soll als Hochschul-eigenes Kommunikationsmittel den Studenten die Möglichkeit geben vom ersten Tag an auf einer echtzeit-Kommunikationsplattform vernetzt zu sein.",
+  "beschreibung": "Studenten der Hochschule für Wirtschaft und Recht im dualen Zweig sind in engen Kursverbänden organisiert, in denen sie ihr gesamtes Studium durchlaufen. Diese Gruppen von ungefähr 30 Studenten verbindet ein gemeinsames Interesse an Kursinhalten, sowie die Organisation des Hochschulalltags. Für diese Zwecke wird eine Austauschplattform in Echtzeit benötigt. Momentan findet dies uneinheitlich auf hochschulfremden Plattformen statt. Das Finden einer optimalen Plattform und das sich als Gruppe Einrichten auf der selbigen ist jedem Kurs selbst überlassen. Nicht immer ist eine einheitliche Lösung auffindbar. Die privaten Anbieter solcher Plattformen entsprechen nicht allen gewünschten Ansprüchen der Studenten in beispielsweise Sicherheit oder den für den Hochschulalltag relevanten angebotenen Funktionen.\nEine einheitliche Organisation, die den Studenten eine schnelle Kommunikation vom ersten Tag an der Hochschule an ermöglicht, soll den Start und den weiteren Verlauf an der Hochschule erleichtern. Hochschulrelevante Inhalte sollen auf einer von privaten Anbietern unabhängigen Plattform ausgetauscht werden können. Des Weiteren kann ein hochschulinternes Chatprogramm einen bereits vorbereiteten Login verwenden, der für alle hochschulrelevanten Plattformen einheitlich ist. So entfällt der Wartungs- und Registrieraufwand für die Studenten. \nIm HWR-Chat sind die Kurse bereits in einem Raum zusammengestellt. Das Suchen anderer Mitstudenten und deren Kontaktinformationen entfällt somit. Durch den Echtzeitchat kann schnell über Themen von “Wer bringt morgen ein Waffeleisen mit?” über “In welchem Raum seid ihr alle?” bis zu “Ich habe morgen Nachprüfung, kann mir jemand schnell das Thema noch einmal erklären?” diskutiert und beraten werden. Die Anzeige der Namen der Studenten erleichtert eine eindeutige Identifikation. Eine einfache und schnelle Kommunikation losgelöst von externen Anbietern wird den Studenten somit ermöglicht.",
+  "logo": "HWRChat_Logo.png",
+  "screenshots": [
+    "HWRChat_Screen1.png",
+    "HWRChat_Screen2.png"
+  ],
+  "download": [],
+  "gitHub": [],
+  "website": [
+    "https://www.home.tebs-live.de/chat"
+  ],
+  "zielgruppe": "Studenten",
+  "jahrgang": "IT-2015",
+  "type": "website"
+}
+{
+  "_id": {
+    "$oid": "599c4a6185896d579ae06c5e"
+  },
+  "name": "HWRLitU",
+  "kurzbeschreibung": "LitU  -  Literatur  und  Unterlagen  ist  eine  Plattform im Internet, auf der Studenten und Dozenten Fachliteratur bewerten und eigene Unterlagen zur Verfügung stellen können, um anderen Studenten eine Orientierungshilfe bei der Auswahl geeigneter Literatur zu geben. ",
+  "beschreibung": "Dozenten verteilen zu Anfang des Semesters oft Listen mit zahlreichen Literaturempfehlungen, deren vollständige Anschaffung und Durcharbeitung jedoch kaum möglich ist.\nUm diesen Problemen konstruktiv zu begegnen, wurde LitU - Literatur und Unterlagen ins Leben gerufen. Hier sollen insbesondere Studierende die von Dozenten genannte oder selbst entdeckte Literatur zu den Themen im Studium bewerten, können aber auch eigene Unterlagen, z.B. Zusammenfassungen, hochladen.\nAll dieses Material  ermöglicht es den Kommilitonen, sinnvolle Literatur von ungeeigneter Literatur zu unterscheiden und somit beim Lernen sehr gezielt vorzugehen.\n\nHinweis: Nach Öffnen der Website erscheint eine Eingabemaske. Bitte geben Sie dort folgende Daten ein:\nBenutzername: root\nPasswort: hallo123\n\nEntwickler des Projektes:\nDustin Mittmann\nMax Standfest\nAnne Traulsen\nAnna Ziegler",
+  "logo": "LitU_Logo1.png",
+  "screenshots": [
+    "LitU_Screen1.jpg",
+    "LitU_Screen2.jpg",
+    "LitU_Screen3.jpg",
+    "LitU_Screen4.jpg"
+  ],
+  "download": [],
+  "gitHub": [],
+  "website": [
+    "http://www.hiddenscripts.de/litu"
+  ],
+  "zielgruppe": "Studenten",
+  "jahrgang": "IT-2015",
+  "type": "website"
+}
+{
+  "_id": {
+    "$oid": "599c4a9085896d579ae06c66"
+  },
+  "name": "LernTreff",
+  "kurzbeschreibung": "Der LernTreff dient der zentralen und einfachen Organisation unter den Studenten, um sich zum Lernen zu verabreden.",
+  "beschreibung": "Der LernTreff soll der zentrale Treffpunkt werden, um sich zum Lernen zu verabreden und Probleme beim Lernen zu beheben. Hauptaugenmerk liegt dabei auf dem einfachen und schnellen Abruf von Informationen und dem gemeinsamen lernen. Aus eigener Erfahrung kennen wir den Unterschied der verschiedenen Lernmodelle und haben es uns zur Aufgabe gemacht, den anderen HWR-Studenten diese Erfahrung möglichst einfach zur Verfügung zu stellen.\nWeiterhin soll ein einfacher Wissensaustausch, über den Upload von Dateien, ermöglicht werden. So werden Lerninhalte für alle Studenten nutzbar und der Aspekt des gemeinsamen Lernens tritt verstärkt in den Vordergrund. Dabei kann zwischen einer klassischen Upload-Funktion und der modernen Möglichkeit des Drag und Drops gewählt werden.\nEs ist jedem Benutzer möglich eigene Treffen einzutragen. Die eingetragenen Treffen werden übersichtlich in einem Kalender dargestellt, der gleichzeitig mit einem Google Kalender synchronisiert wird. So soll der Zugriff und die Organisation der Treffen jederzeit und von überall möglich sein.",
+  "logo": "treffenliste.png",
+  "screenshots": [
+    "login.png",
+    "startseite.png",
+    "kalender.png",
+    "treffenerstellen.png"
+  ],
+  "download": [],
+  "gitHub": [],
+  "website": [],
+  "zielgruppe": "Studenten",
+  "jahrgang": "IT-2015",
+  "type": "website"
+}
+{
+  "_id": {
+    "$oid": "599c4a9f85896d579ae06c68"
+  },
+  "name": "E-Learning@HWR",
+  "kurzbeschreibung": "E-Learning@HWR ist eine webbasierte E-Learning Software.",
+  "beschreibung": "Auf der Webseite E-Learning@HWR können Dozenten ihre Vorlesungen durch E-Learning Inhalte erweitern. Sie können verschiedene Unterrichtsmaterialien in einem Modul bereitstellen. Diese Materialien können, beispielsweise Texte, Bilder oder auch Youtube-Videos sein.\nDie Dozenten können zu diesen Inhalten Wissenstests erstellen. In diesen Tests können sie Fragen definieren, mit denen die Studierenden ihr erlerntes Wissen überprüfen können. Aus den Ergebnissen dieser Tests, können die Dozenten Rückschlüsse auf den Erfolg ihrer Vorlesungen prüfen.\nDie Studierenden können wiederum die von den Dozenten zur Verfügung gestellten Inhalte bearbeiten und anschließend die Wissenstests durchführen. Auch die Studierenden erhalten nach dem Ausfüllen des Tests eine Auswertung ihrer Antworten und können somit Rückschlüsse auf ihren eigenen Wissensstand stellen.\n\nDie Internetseite ist nicht immer erreichbar.",
+  "logo": "logo.png",
+  "screenshots": [
+    "homepage.png",
+    "modul.png",
+    "wissenstest.png",
+    "statistik.png",
+    "video.png"
+  ],
+  "download": [],
+  "gitHub": [
+    "https://github.com/mhoellner/ELearning"
+  ],
+  "website": [
+    "http://hwr-elearning.ddnss.de"
+  ],
+  "zielgruppe": "Studenten",
+  "jahrgang": "IT-2015",
+  "type": "website"
+}
