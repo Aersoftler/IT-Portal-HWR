@@ -4,7 +4,8 @@ angular.module(
     .controller(
         'detailCtrl',
         function ($scope, $http) {
-            $http.post(window.location.pathname).then(function (response) {
+            const locationName = window.location.pathname.split("/");
+            $http.get("/software/" + locationName[locationName.length - 1]).then(function (response) {
                 $scope.appli = response.data[0];
                 $scope.appli.logo = buildLogoUrl($scope.appli);
                 for (let i in response.data[0].screenshots) {

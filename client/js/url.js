@@ -1,7 +1,7 @@
 /**
  * Datei, in der alles um die Urls definiert ist
  */
-const detailUrl = "/details";
+const detailUrl = "/detail";
 const desktopUrl = "/desktopApp";
 const mobileAppUrl = "/mobileApp";
 const embeddedAppUrl = "/embeddedApp";

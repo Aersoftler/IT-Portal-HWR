@@ -6,29 +6,30 @@ module.controller(
         const location = window.location.href;
         $scope.nameFilter = location.substring(location.lastIndexOf('/') + 1);
         let results = [];
-        function fillScopeResults(response, url) {
+
+        function fillScopeResults(response) {
             for (let i in response.data) {
                 app = response.data[i];
                 results.push({
                     "name": app.name,
                     "kurzbeschreibung": app.kurzbeschreibung,
                     "logo": buildLogoUrl(app),
-                    "url": url + '/' + app.name
+                    "url": detailUrl + '/' + app.name
                 });
             }
         }
 
-        $http.post('/mobileApp').then(function (response) {
-            fillScopeResults(response, detailMobileAppUrl);
+        $http.get('/mobileApp').then(function (response) {
+            fillScopeResults(response);
         });
-        $http.post('/desktopApp').then(function (response) {
-            fillScopeResults(response, detailDesktopAppUrl);
+        $http.get('/desktopApp').then(function (response) {
+            fillScopeResults(response);
         });
-        $http.post('/embeddedApp').then(function (response) {
-            fillScopeResults(response, detailEmbeddedAppUrl);
+        $http.get('/embeddedApp').then(function (response) {
+            fillScopeResults(response);
         });
-        $http.post('/website').then(function (response) {
-            fillScopeResults(response, detailWebsiteUrl);
+        $http.get('/website').then(function (response) {
+            fillScopeResults(response);
         });
         $scope.results = results;
     }
@@ -37,7 +38,7 @@ module.controller(
 module.directive('dieSuchergebnisse', function () {
     return {
         priority: 0,
-        templateUrl: '/suchergebnisse',
+        templateUrl: '/suchergebnisse.html',
         restrict: 'A'
     }
 });
