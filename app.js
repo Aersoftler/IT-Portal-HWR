@@ -5,10 +5,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const MongoClient = require('mongodb').MongoClient;
-
-const mongoUrl = "mongodb://localhost:27017/it-portal-hwr";
-const softwareCollection = "software";
+const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
 
@@ -17,54 +14,24 @@ const picPath = __dirname + "/pics"; //Pfad zu Bildern
 const programPath = __dirname + "/program"; //Pfad zu herunterladbaren Dateien
 
 /**
- * Startseites
+ * Startseite
  */
 app.get("/", function (req, res) {
     res.sendFile(path.join(staticPath, "home.html"));
 });
 
+/**
+ * Detailseite
+ */
 app.get("/detail/:software", function (req, res) {
     res.sendFile(path.join(staticPath, "detail.html"))
 });
-
-function getSoftwareByType(type, callback) {
-    MongoClient.connect(mongoUrl, function (err, db) {
-        if (err) throw err;
-        db.collection(softwareCollection).find({"type": type}, {"_id": false}).toArray(function (err, dbResult) {
-            if (err) throw err;
-            db.close();
-            callback(dbResult);
-        });
-    });
-}
-
-function getSoftwareByName(name, callback) {
-    MongoClient.connect(mongoUrl, function (err, db) {
-        if (err) throw err;
-        db.collection(softwareCollection).find({"name": name}, {"_id": false}).toArray(function (err, dbResult) {
-            if (err) throw err;
-            db.close();
-            callback(dbResult);
-        });
-    });
-}
-
-function getAllSoftware(callback) {
-    MongoClient.connect(mongoUrl, function (err, db) {
-        if (err) throw err;
-        db.collection(softwareCollection).find({}, {"_id": false}).toArray(function (err, dbResult) {
-            if (err) throw err;
-            db.close();
-            callback(dbResult);
-        });
-    });
-}
 
 /**
  * alle Desktop - Programme
  */
 app.get("/desktopApp", function (req, res) {
-    getSoftwareByType("desktop", function (result) {
+    mongoUtils.getSoftwareByType("desktop", function (result) {
         res.send(result)
     });
 });
@@ -73,7 +40,7 @@ app.get("/desktopApp", function (req, res) {
  * alle Embedded - Programme
  */
 app.get("/embeddedApp", function (req, res) {
-    getSoftwareByType("embedded", function (result) {
+    mongoUtils.getSoftwareByType("embedded", function (result) {
         res.send(result)
     });
 });
@@ -82,7 +49,7 @@ app.get("/embeddedApp", function (req, res) {
  * alle Apps
  */
 app.get("/mobileApp", function (req, res) {
-    getSoftwareByType("mobile", function (result) {
+    mongoUtils.getSoftwareByType("mobile", function (result) {
         res.send(result)
     });
 });
@@ -91,7 +58,7 @@ app.get("/mobileApp", function (req, res) {
  * alle Webseiten
  */
 app.get("/website", function (req, res) {
-    getSoftwareByType("website", function (result) {
+    mongoUtils.getSoftwareByType("website", function (result) {
         res.send(result)
     });
 });
@@ -100,7 +67,7 @@ app.get("/website", function (req, res) {
  * passende Anwednung an den Client
  */
 app.get("/software/:name", function (req, res) {
-    getSoftwareByName(req.params.name, function (result) {
+    mongoUtils.getSoftwareByName(req.params.name, function (result) {
         res.send(result);
     });
 });
@@ -142,7 +109,7 @@ function sendUebersicht(res) {
  * alle Anwendungen
  */
 app.get("/allProducts", function (req, res) {
-    getAllSoftware(function (result) {
+    mongoUtils.getAllSoftware(function (result) {
         res.send(result);
     });
 });
