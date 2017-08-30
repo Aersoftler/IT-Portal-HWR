@@ -144,3 +144,7 @@
 .carousel-caption > h2 {
     color: #0f0f0f;
 }
+
+.thumbnail {
+    cursor: pointer;
+}
