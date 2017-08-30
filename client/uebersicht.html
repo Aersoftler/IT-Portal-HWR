@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="uebersicht">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftwareServiceHWR - Suchergebnisse</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/ownStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/addHeaderFooter.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/url.js"></script>
+</head>
+<body ng-controller="resultsCtrl" class="ng-cloak">
+<div id="header"></div>
+<div class="jumbotron jumbotronOuer jumbotronUebersicht">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Suchergebnisse für "{{nameFilter}}"</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Comoboxen zur Filterung -->
+<div class="container">
+    <div class="col-sm-3">
+        <h3>Typ</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>App</option>
+            <option>Desktop-Anwendung</option>
+            <option>Webseite</option>
+            <option>Embedded-Software</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Zielgruppe</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>Jeder</option>
+            <option>Studenten</option>
+            <option>Dozenten</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Jahrgang</h3>
+        <select class="form-control">
+            <option>auswählen...</option>
+            <option>IT-2013</option>
+            <option>IT-2014</option>
+            <option>IT-2015</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <h3>Sortieren nach...</h3>
+        <select class="form-control">
+            <option>Namen</option>
+            <option>Aktualität</option>
+        </select>
+    </div>
+</div>
+<div class="container">
+    <h6 id="anzahlLoesungen">{{filteredResults.length + " Lösung(en) gefunden"}}</h6>
+    <hr>
+    <!-- eigentliche Suchergebnisse -->
+    <div class="well well-sm clearfix ownWell" die-suchergebnisse="result"
+         ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults"></div>
+</div>
+<div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="/js/uebersicht.js"></script>
+</body>
+</html>

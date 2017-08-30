@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="home">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftwareServiceHWR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/ownStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/addHeaderFooter.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/url.js"></script>
+</head>
+<body class="ng-cloak">
+<div id="header"></div>
+<!-- carousell-->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="col-sm-offset-1">Unsere Lösungen...</h1>
+        <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#homeCarousel" data-slide-to="1"></li>
+                <li data-target="#homeCarousel" data-slide-to="2"></li>
+                <li data-target="#homeCarousel" data-slide-to="3"></li>
+                <li data-target="#homeCarousel" data-slide-to="4"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" ng-controller="carouselCtrl">
+                <div class="item active">
+                    <a href="\ueber_uns.html">
+                        <img class="homeCarouselImage" src="/images/ITPlattformLogo.png">
+                        <div class="carousel-caption">
+                            <h2>Über diese Internetseite</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="item" ng-repeat="app in carouselApps">
+                    <a href="{{app.url}}">
+                        <img class="homeCarouselImage" ng-src="{{app.logo}}">
+                        <div class="carousel-caption">
+                            <h2>{{app.name}}</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left blackArrow" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right blackArrow" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--alle IT-Lösungen -->
+<div class="container">
+    <div class="well">
+        <h3 style="padding-bottom: 2%"><strong>IT-Lösungen im Überblick</strong></h3>
+        <div class="row">
+            <div class="well col-sm-3">
+                <div><strong>App</strong></div>
+                <div class="col-sm-offset-1" ng-controller="mobileAppCtrl">
+                    <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
+                </div>
+            </div>
+            <div class="well col-sm-3">
+                <div><strong>Desktop-Anwendung</strong></div>
+                <div class="col-sm-offset-1" ng-controller="desktopAppCtrl">
+                    <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
+                </div>
+            </div>
+            <div class="well col-sm-3">
+                <div><strong>Webseite</strong></div>
+                <div class="col-sm-offset-1" ng-controller="websiteCtrl">
+                    <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
+                </div>
+            </div>
+            <div class="well col-sm-3">
+                <div><strong>Embedded-Software</strong></div>
+                <div class="col-sm-offset-1" ng-controller="embeddedAppCtrl">
+                    <li ng-repeat="app in apps"><a href="{{app.url}}">{{app.name}}</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

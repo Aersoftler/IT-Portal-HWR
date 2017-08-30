@@ -1,10 +1,11 @@
 {
-  "name": "softwareservicehwr",
+  "name": "it-portal-hwr",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "mongodb": "^2.2.31"
   },
   "devDependencies": {},
   "scripts": {
@@ -12,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aersoftler/SoftwareServiceHWR.git"
+    "url": "git+https://github.com/Aersoftler/IT-Portal-HWR.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aersoftler/SoftwareServiceHWR/issues"
+    "url": "https://github.com/Aersoftler/IT-Portal-HWR/issues"
   },
-  "homepage": "https://github.com/Aersoftler/SoftwareServiceHWR#readme"
+  "homepage": "https://github.com/Aersoftler/IT-Portal-HWR#readme"
 }

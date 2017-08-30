@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="details" ng-controller="detailCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftwareServiceHWR - {{appli.name}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/ownStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/addHeaderFooter.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/url.js"></script>
+</head>
+<div id="header"></div>
+<body class="ng-cloak">
+<!-- Name der Anwendung im Jumbotron -->
+<div class="jumbotron jumbotronOuer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>{{appli.name}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- Logo mit dem man die Screenshots öffnen kann -->
+            <div id="thumb" class="thumbnail" data-toggle="modal" data-target="#screenshotModal">
+                <img class="img-responsive" ng-src="{{appli.logo}}">
+                <div id="underThumb" class="caption">
+                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                    Screenshots
+                </div>
+            </div>
+            <!-- Download, GitHub, Webseite -->
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="download in appli.download"><a
+                        href="{{download}}">Download</a></li>
+                <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}" target="_blank">GitHub</a>
+                </li>
+                <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}" target="_blank">Webseite</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Lange Beschreibung -->
+        <div class="col-sm-6">
+            <div class="well detailWell">{{appli.beschreibung}}</div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="screenshotModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Screenshots</h3>
+                </div>
+                <div class="modal-body">
+                    <div id="screenshotCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="detailCarouselImage" src="{{appli.logo}}">
+                            </div>
+                            <div class="item" ng-repeat="screenshot in appli.screenshots">
+                                <img class="detailCarouselImage" ng-src="{{screenshot}}">
+                            </div>
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#screenshotCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left blackArrow" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#screenshotCarousel" role="button"
+                               data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right blackArrow" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Comments -->
+    <h2>Kommentare</h2>
+    <div id="comments">
+
+        <div id="addComment" class="well">
+            <h3 id="commentTitle">Kommentar hinzufügen</h3>
+            <form action="" method="POST" id="commentForm" enctype="multipart/form-data" >
+                <div class="form-group">
+                    <input type="text" id="name" required
+                           placeholder="Name" class="form-control" name="verfasser"/>
+                </div>
+                <div class="form-group">
+                    <textarea cols="30" rows="5" class="form-control" id="message" placeholder="Kommentar" name="kommentar"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 text-center">
+                        <button type="reset" class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove"></span>
+                            Zurücksetzen
+                        </button>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <button type="submit" class="btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            Abschicken
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div ng-repeat="comment in appli.kommentare | orderBy: 'timestamp':true " class="well">
+            <div class="row">
+                <div class="col-md-11">
+                    <p><strong>{{ comment.user}}</strong> schrieb ...</p>
+                </div>
+                <div class="col-md-1 text-right">
+                    <span class="label label-default">{{ comment.timestamp | date: 'dd.MM.yyyy'}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <em>
+                            {{ comment.message}}
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="/js/details.js"></script>
+</body>
+</html>
