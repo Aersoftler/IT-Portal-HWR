@@ -9,11 +9,11 @@ module.controller(
 
         function fillScopeResults(response) {
             for (let i in response.data) {
-                app = response.data[i];
+                const app = response.data[i];
                 results.push({
                     "name": app.name,
                     "kurzbeschreibung": app.kurzbeschreibung,
-                    "logo": buildLogoUrl(app),
+                    "logo": app.logo,
                     "url": detailUrl + '/' + app.name
                 });
             }

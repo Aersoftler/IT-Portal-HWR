@@ -9,8 +9,6 @@ const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
 
-const picPath = __dirname + "/pics"; //Pfad zu Bildern
-
 const programPath = __dirname + "/program"; //Pfad zu herunterladbaren Dateien
 
 /**
@@ -78,14 +76,6 @@ app.get("/software/:name", function (req, res) {
 app.get("/download/:download", function (req, res) {
     res.sendFile(path.join(programPath, String(req.params.download)));
 });
-
-/**
- * passendes Bild
- */
-app.get("/pic/:name/:pic", function (req, res) {
-    res.sendFile(path.join(picPath, String(req.params.name), String(req.params.pic)));
-});
-
 /**
  * Übersichtsseite
  */
