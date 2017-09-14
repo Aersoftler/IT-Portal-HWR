@@ -145,6 +145,22 @@
     color: #0f0f0f;
 }
 
-.thumbnail {
+#thumb {
     cursor: pointer;
+}
+
+.updateInput {
+    width: 100%;
+    max-width: 100%;
+}
+
+.updateImage {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.updateImage:hover {
+    border: 1px solid red;
 }

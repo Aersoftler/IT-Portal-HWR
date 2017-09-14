@@ -5,6 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.15.3",
+    "express-basic-auth": "^1.1.2",
+    "md5": "^2.2.1",
     "mongodb": "^2.2.31"
   },
   "devDependencies": {},

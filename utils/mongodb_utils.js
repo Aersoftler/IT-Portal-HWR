@@ -6,7 +6,7 @@ const softwareCollection = "software";
 function getSoftwareByType(type, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
-        db.collection(softwareCollection).find({"type": type}, {"_id": false}).toArray(function (err, dbResult) {
+        db.collection(softwareCollection).find({"type": type}, {}).toArray(function (err, dbResult) {
             if (err) throw err;
             db.close();
             callback(dbResult);
@@ -17,7 +17,7 @@ function getSoftwareByType(type, callback) {
 function getSoftwareByName(name, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
-        db.collection(softwareCollection).find({"name": name}, {"_id": false}).toArray(function (err, dbResult) {
+        db.collection(softwareCollection).find({"name": name}, {}).toArray(function (err, dbResult) {
             if (err) throw err;
             db.close();
             callback(dbResult);
@@ -28,7 +28,7 @@ function getSoftwareByName(name, callback) {
 function getAllSoftware(callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
-        db.collection(softwareCollection).find({}, {"_id": false}).toArray(function (err, dbResult) {
+        db.collection(softwareCollection).find({}, {}).toArray(function (err, dbResult) {
             if (err) throw err;
             db.close();
             callback(dbResult);
