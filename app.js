@@ -7,6 +7,7 @@ const app = express();
 const path = require("path");
 const md5 = require("md5");
 const auth = require('express-basic-auth');
+const bodyParser = require('body-parser');
 const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
@@ -119,6 +120,18 @@ function handleAuth(user, pass) {
 
 app.get("/update/:software", authentication, function (req, res) {
     res.sendFile(path.join(staticPath, "update_software.html"));
+});
+
+// var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "50mb"})
+app.use(bodyParser.urlencoded({
+    extended: false,
+    limit: '1000gb'
+}));
+app.use(bodyParser.json({limit: '1000gb'}));
+app.patch("/update", function (req, res) {
+    mongoUtils.updateSoftware(req.body, function (productId) {
+        res.send(productId)
+    });
 });
 
 

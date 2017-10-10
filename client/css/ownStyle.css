@@ -161,6 +161,19 @@
     cursor: pointer;
 }
 
-.updateImage:hover {
+.updateImage:hover, #downloadName:hover {
     border: 1px solid red;
+}
+
+.successNotification, .failureNotification {
+    width: 75%;
+    display: none;
+}
+
+.fileInput {
+    display: none !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
 }

@@ -83,3 +83,67 @@ function addScreenshot(event) {
         reader.readAsDataURL(file);
     }
 }
+
+function addFile(event) {
+    const reader = new FileReader();
+    const path = event.value.split("\\");
+    reader.filename = path[path.length - 1];
+    reader.onload = function (onloadEvent) {
+        const $scope = getScope();
+        $scope.$apply(function () {
+            $scope.appli[event.id][0] = onloadEvent.target.filename;
+        });
+        updateProductValues($scope);
+        onloadEvent.preventDefault();
+    };
+    const file = event.files[0];
+    reader.readAsDataURL(file);
+}
+
+function removeDownload() {
+    const shouldDelete = confirm("Soll die Datei wirklich gelöscht werden?");
+    if (shouldDelete) {
+        const $scope = getScope();
+        $scope.$apply(function () {
+            $scope.appli["download"][0] = "";
+        });
+        updateProductValues($scope);
+    }
+}
+
+function sendUpdate() {
+    $.ajax({
+        url: "/update",
+        type: "PATCH",
+        data: JSON.stringify(productValues),
+        contentType: "application/json",
+        cache: false,
+        processData: false,
+        success: function (res) {
+            const $scope = getScope();
+            $scope.$apply(function () {
+                $scope.appli._id = res;
+            });
+            updateProductValues($scope);
+        },
+        error: function (jqXHR, textStatus, errorMessage) {
+            console.log(errorMessage);
+        }
+    })
+}
+
+function save() {
+    const downloadElement = $("#download")[0];
+    if (downloadElement.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function () {
+            productValues.file = reader.result;
+            sendUpdate()
+        };
+
+        reader.readAsDataURL(downloadElement.files[0]);
+    } else {
+        sendUpdate();
+    }
+}

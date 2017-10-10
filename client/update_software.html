@@ -2,7 +2,7 @@
 <html lang="de" ng-app="update_software" ng-controller="update_softwareCtrl">
 <head>
     <meta charset="UTF-8">
-    <title>SoftwareServiceHWR - {{appli.name}}</title>
+    <title class="ng-cloak">SoftwareServiceHWR - {{appli.name}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -34,31 +34,41 @@
                     <div>
                         Logo:
                         <img class="img-responsive" ng-src="{{appli.logo}}">
-                        <input class="updateInput" type="file" accept="image/*" id="logo" onchange="addLogo(this)">
+                        <input class="fileInput" type="file" accept="image/*" id="logo" onchange="addLogo(this)">
+                        <input class="updateInput" type="button" onclick="document.getElementById('logo').click();"
+                               value="Logo auswählen">
                     </div>
                     <div>
                         Screenshots:
                         <div class="d-inline" ng-repeat="screenshot in appli.screenshots">
                             <img class="updateImage" ng-src="{{screenshot}}" onclick="deleteImage(event)">
                         </div>
-                        <input class="updateInput" type="file" multiple accept="image/*" onchange="addScreenshot(this)">
+                        <input class="fileInput" type="file" multiple accept="image/*" onchange="addScreenshot(this)"
+                               id="screenshot">
+                        <input class="updateInput" type="button"
+                               onclick="document.getElementById('screenshot').click();" value="Screenshots auswählen">
                     </div>
                 </div>
                 <!-- Download, GitHub, Webseite -->
                 <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="download in appli.download">Download: {{download}}<input
-                            class="updateInput" type="file"></li>
-                    <li class="list-group-item" ng-repeat="git in appli.gitHub">GitHub-Link:<input class="updateInput"
-                                                                                                   type="text"
-                                                                                                   value="{{git}}"
-                                                                                                   onchange="textFieldChanged(this)"
-                                                                                                   id="gitHub">
+                    <input id="download" class="fileInput" type="file" onchange="addFile(this)">
+                    <li class="list-group-item" ng-repeat="download in appli.download">
+                        <div class="row">
+                            <div class="col-xs-2">Download:</div>
+                            <div class="col-xs-10">
+                                <div id="downloadName" onclick="removeDownload()">{{download}}</div>
+                            </div>
+                        </div>
+                        <input class="updateInput" type="button" onclick="document.getElementById('download').click();"
+                               value="Herunterladebare Datei auswählen">
                     </li>
-                    <li class="list-group-item" ng-repeat="website in appli.website">Webseite:<input class="updateInput"
-                                                                                                     type="text"
-                                                                                                     value="{{website}}"
-                                                                                                     onchange="textFieldChanged(this)"
-                                                                                                     id="website">
+                    <li class="list-group-item" ng-repeat="git in appli.gitHub">GitHub-Link:
+                        <input class="updateInput" type="text" value="{{git}}" onchange="textFieldChanged(this)"
+                               id="gitHub">
+                    </li>
+                    <li class="list-group-item" ng-repeat="website in appli.website">Webseite:
+                        <input class="updateInput" type="text" value="{{website}}" onchange="textFieldChanged(this)"
+                               id="website">
                     </li>
                 </ul>
             </div>
@@ -80,7 +90,11 @@
                                                                   value="{{appli.zielgruppe}}"
                                                                   onchange="textFieldChanged(this)"></li>
                 </ul>
-                <button class="btn pull-right bottom-align-text">Speichern</button>
+                <div>
+                    <button class="btn pull-right bottom-align-text" onclick="save()">Speichern</button>
+                </div>
+                <div class="successNotification alert alert-success">Erfolgreich gespeichert</div>
+                <div class="failureNotification alert alert-danger">Es ist ein Fehler aufgetreten</div>
             </div>
         </div>
     </div>
