@@ -111,7 +111,7 @@ function removeDownload() {
     }
 }
 
-function sendUpdate() {
+function sendUpdate(spinner) {
     $.ajax({
         url: "/update",
         type: "PATCH",
@@ -125,25 +125,56 @@ function sendUpdate() {
                 $scope.appli._id = res;
             });
             updateProductValues($scope);
+            $("#failureAlert").css("display", "none");
+            $("#successAlert").css("display", "block");
+            spinner.stop();
         },
         error: function (jqXHR, textStatus, errorMessage) {
             console.log(errorMessage);
+            $("#failureAlert").css("display", "block");
+            $("#successAlert").css("display", "none");
+            spinner.stop();
         }
     })
 }
 
+const opts = {
+    lines: 13 // The number of lines to draw
+    , length: 28 // The length of each line
+    , width: 10 // The line thickness
+    , radius: 42 // The radius of the inner circle
+    , scale: 0.25 // Scales overall size of the spinner
+    , corners: 1 // Corner roundness (0..1)
+    , color: '#000' // #rgb or #rrggbb or array of colors
+    , opacity: 0.25 // Opacity of the lines
+    , rotate: 0 // The rotation offset
+    , direction: 1 // 1: clockwise, -1: counterclockwise
+    , speed: 1 // Rounds per second
+    , trail: 60 // Afterglow percentage
+    , fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+    , zIndex: 2e9 // The z-index (defaults to 2000000000)
+    , className: 'spinner' // The CSS class to assign to the spinner
+    , top: '98%' // Top position relative to parent
+    , left: '75%' // Left position relative to parent
+    , shadow: true // Whether to render a shadow
+    , hwaccel: false // Whether to use hardware acceleration
+    , position: 'absolute' // Element positioning
+};
+
 function save() {
+    const target = document.getElementById('saveContainer');
+    const spinner = new Spinner(opts).spin(target);
     const downloadElement = $("#download")[0];
     if (downloadElement.files[0]) {
         const reader = new FileReader();
 
         reader.onload = function () {
             productValues.file = reader.result;
-            sendUpdate()
+            sendUpdate(spinner)
         };
 
         reader.readAsDataURL(downloadElement.files[0]);
     } else {
-        sendUpdate();
+        sendUpdate(spinner);
     }
 }
