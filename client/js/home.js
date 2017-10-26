@@ -12,7 +12,7 @@ module.controller(
                 carouselApps.push({
                     "name": app.name,
                     "url": detailUrl + "/" + app.name,
-                    "logo": buildLogoUrl(app)
+                    "logo": app.logo
                 });
             } else {
                 carouselApps.push({});

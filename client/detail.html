@@ -2,10 +2,12 @@
 <html lang="de" ng-app="details" ng-controller="detailCtrl">
 <head>
     <meta charset="UTF-8">
-    <title>SoftwareServiceHWR - {{appli.name}}</title>
+    <title class="ng-cloak">SoftwareServiceHWR - {{appli.name}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+            type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <link rel="stylesheet" href="/css/ownStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/addHeaderFooter.js"></script>
@@ -37,8 +39,8 @@
             </div>
             <!-- Download, GitHub, Webseite -->
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="download in appli.download"><a
-                        href="{{download}}">Download</a></li>
+                <li class="list-group-item" ng-repeat="download in appli.download"><a href="{{download}}" download>Download</a>
+                </li>
                 <li class="list-group-item" ng-repeat="git in appli.gitHub"><a href="{{git}}" target="_blank">GitHub</a>
                 </li>
                 <li class="list-group-item" ng-repeat="website in appli.website"><a href="{{website}}" target="_blank">Webseite</a>
@@ -142,7 +144,6 @@
 
 </div>
 <div id="foo"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
 <script src="/js/details.js"></script>
 </body>
 </html>

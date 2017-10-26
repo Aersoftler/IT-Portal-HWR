@@ -5,11 +5,12 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const md5 = require("md5");
+const auth = require('express-basic-auth');
+const bodyParser = require('body-parser');
 const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
-
-const picPath = __dirname + "/pics"; //Pfad zu Bildern
 
 const programPath = __dirname + "/program"; //Pfad zu herunterladbaren Dateien
 
@@ -78,14 +79,6 @@ app.get("/software/:name", function (req, res) {
 app.get("/download/:download", function (req, res) {
     res.sendFile(path.join(programPath, String(req.params.download)));
 });
-
-/**
- * passendes Bild
- */
-app.get("/pic/:name/:pic", function (req, res) {
-    res.sendFile(path.join(picPath, String(req.params.name), String(req.params.pic)));
-});
-
 /**
  * Übersichtsseite
  */
@@ -115,5 +108,32 @@ app.get("/allProducts", function (req, res) {
 });
 
 app.use(express.static(staticPath));
+
+const authentication = auth({
+    authorizer: handleAuth,
+    challenge: true
+});
+
+function handleAuth(user, pass) {
+    return user === "admin" && md5(pass) === "1beae8ab50b47674f134976c589879b4";
+}
+
+app.get("/update/:software", authentication, function (req, res) {
+    res.sendFile(path.join(staticPath, "update_software.html"));
+});
+
+// var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "50mb"})
+app.use(bodyParser.urlencoded({
+    extended: false,
+    limit: '1000gb'
+}));
+app.use(bodyParser.json({limit: '1000gb'}));
+app.patch("/update", function (req, res) {
+    mongoUtils.updateSoftware(req.body, function (productId) {
+        res.send(productId)
+    });
+});
+
+
 app.listen(3000);
 console.log("Server ist gestartet (localhost:3000)");

@@ -10,8 +10,3 @@ const detailDesktopAppUrl = detailUrl + desktopUrl;
 const detailMobileAppUrl = detailUrl + mobileAppUrl;
 const detailEmbeddedAppUrl = detailUrl + embeddedAppUrl;
 const detailWebsiteUrl = detailUrl + websiteUrl;
-const picUrl = "/pic";
-
-function buildLogoUrl(app) {
-    return picUrl + '/' + app.name + '/' + app.logo;
-}
