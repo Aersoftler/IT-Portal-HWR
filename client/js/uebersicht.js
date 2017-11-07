@@ -2,10 +2,10 @@ module = angular.module("uebersicht", []);
 
 module.controller(
     'resultsCtrl',
-    function ($scope, $http) {
+    ['$scope', '$http', '$timeout',function ($scope, $http) {
         const location = window.location.href;
         $scope.nameFilter = location.substring(location.lastIndexOf('/') + 1);
-        let results = [];
+         let results = [];
 
         function fillScopeResults(response) {
             for (let i in response.data) {
@@ -14,15 +14,18 @@ module.controller(
                     "name": app.name,
                     "kurzbeschreibung": app.kurzbeschreibung,
                     "logo": app.logo,
-                    "url": detailUrl + '/' + app.name
+                    "url": detailUrl + '/' + app.name,
+                    "type": app.type,
+                    "zielgruppe": app.zielgruppe,
+                    "jahrgang": app.jahrgang
                 });
             }
         }
 
-        $http.get('/mobileApp').then(function (response) {
+        $http.get('/allProducts').then(function (response) {
             fillScopeResults(response);
         });
-        $http.get('/desktopApp').then(function (response) {
+/*        $http.get('/desktopApp').then(function (response) {
             fillScopeResults(response);
         });
         $http.get('/embeddedApp').then(function (response) {
@@ -30,10 +33,10 @@ module.controller(
         });
         $http.get('/website').then(function (response) {
             fillScopeResults(response);
-        });
+        });*/
         $scope.results = results;
     }
-);
+]);
 
 module.directive('dieSuchergebnisse', function () {
     return {
