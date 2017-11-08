@@ -111,4 +111,22 @@ function updateSoftware(software, callback) {
     })
 }
 
-module.exports = {getSoftwareByType, getSoftwareByName, getAllSoftware, addSoftware, updateSoftware};
+function deleteSoftwareByName(name, callback) {
+    MongoClient.connect(mongoUrl, function (err, db) {
+        if (err) throw err;
+        db.collection(softwareCollection).deleteOne({'name': name}, function (err) {
+            if (err) throw err;
+            db.close();
+            callback();
+        });
+    });
+}
+
+module.exports = {
+    getSoftwareByType,
+    getSoftwareByName,
+    getAllSoftware,
+    addSoftware,
+    updateSoftware,
+    deleteSoftwareByName
+};

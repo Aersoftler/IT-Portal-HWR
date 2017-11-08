@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="uebersicht">
+<head>
+    <meta charset="UTF-8">
+    <title>SoftwareServiceHWR - Suchergebnisse</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+            type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/ownStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/addHeaderFooter.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/url.js"></script>
+</head>
+<body ng-controller="resultsCtrl" class="ng-cloak">
+<div id="header"></div>
+<div class="jumbotron jumbotronOuer jumbotronUebersicht">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Software bearbeiten</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <hr>
+    <!-- eigentliche Suchergebnisse -->
+    <div class="well well-sm clearfix ownWell"
+         ng-repeat="result in results | filter: nameFilter | orderBy: 'name' as filteredResults">
+        <div class="row">
+            <div class="col-sm-11">
+                <h4>
+                    <a href="{{result.url}}">{{result.name}}</a>
+                </h4>
+            </div>
+            <div class="col-sm-1">
+                <div class="pull-right">
+                    <button data-name={{result.name}} onclick="deleteSoftware(this)" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Software löschen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="foo"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script src="/js/update.js"></script>
+</body>
+</html>

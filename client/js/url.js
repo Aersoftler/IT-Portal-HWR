@@ -2,6 +2,7 @@
  * Datei, in der alles um die Urls definiert ist
  */
 const detailUrl = "/detail";
+const updateUrl = "/update";
 const desktopUrl = "/desktopApp";
 const mobileAppUrl = "/mobileApp";
 const embeddedAppUrl = "/embeddedApp";

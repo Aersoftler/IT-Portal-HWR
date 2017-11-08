@@ -118,8 +118,18 @@ function handleAuth(user, pass) {
     return user === "admin" && md5(pass) === "1beae8ab50b47674f134976c589879b4";
 }
 
+app.get("/update/", authentication, function (req, res) {
+    res.sendFile(path.join(staticPath, "update.html"));
+});
+
 app.get("/update/:software", authentication, function (req, res) {
     res.sendFile(path.join(staticPath, "update_software.html"));
+});
+
+app.delete("/:software", authentication, function (req, res) {
+    mongoUtils.deleteSoftwareByName(req.params.software, function () {
+        res.send("OK");
+    })
 });
 
 // var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "50mb"})
