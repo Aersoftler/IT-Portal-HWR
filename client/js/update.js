@@ -31,6 +31,9 @@ module.controller(
         $http.get('/website').then(function (response) {
             fillScopeResults(response);
         });
+        $http.get('/default').then(function (response) {
+            fillScopeResults(response);
+        });
         $scope.results = results;
     }
 );
@@ -49,4 +52,21 @@ function deleteSoftware(event) {
             }
         })
     }
+}
+
+function addSoftware() {
+    $.ajax({
+        url: "/" + $("#newSoftwareName").val(),
+        type: "POST",
+        success: function () {
+            location.reload();
+        },
+        error: function (jqXHR, textStatus, errorMessage) {
+            if (jqXHR.status === 409) {
+                alert("Software mit dem Namen existiert bereits");
+            } else {
+                alert("Es ist ein Fehler aufgetreten. Bitte später erneut versuchen!");
+            }
+        }
+    })
 }

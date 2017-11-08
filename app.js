@@ -65,6 +65,15 @@ app.get("/website", function (req, res) {
 });
 
 /**
+ *
+ */
+app.get("/default", function (req, res) {
+    mongoUtils.getSoftwareByType("default", function (result) {
+        res.send(result)
+    });
+});
+
+/**
  * passende Anwednung an den Client
  */
 app.get("/software/:name", function (req, res) {
@@ -129,6 +138,17 @@ app.get("/update/:software", authentication, function (req, res) {
 app.delete("/:software", authentication, function (req, res) {
     mongoUtils.deleteSoftwareByName(req.params.software, function () {
         res.send("OK");
+    })
+});
+
+app.post("/:software", authentication, function (req, res) {
+    mongoUtils.addSoftwareByName(req.params.software, function (message) {
+        if (message === "OK") {
+            res.send(message);
+        } else if (message === "already existing") {
+            res.status(409);
+            res.send(message);
+        }
     })
 });
 
