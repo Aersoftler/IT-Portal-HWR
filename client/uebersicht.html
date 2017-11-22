@@ -28,30 +28,20 @@
 <div class="container">
     <div class="col-sm-3">
         <h3>Typ</h3>
-        <select class="form-control" ng-model="typeFilter" ng-options="item.type as item.type for item in results">
+        <select class="form-control" ng-model="typeFilter" ng-options="item.type as item.type for item in results | unique:'type' | orderBy: 'type' ">
             <option value="">auswählen...</option>
-        <!--            <option value="type">App</option>
-                        <option value="desktop">Desktop-Anwendung</option>
-                        <option value="webseite">Webseite</option>
-                        <option value="embedded">Embedded-Software</option>&ndash;&gt;-->
         </select>
     </div>
     <div class="col-sm-3">
         <h3>Zielgruppe</h3>
-        <select class="form-control" ng-model="zielgruppeFilter" ng-options="item.zielgruppe as item.zielgruppe for item in results">
+        <select class="form-control" ng-model="zielgruppeFilter" ng-options="item.zielgruppe as item.zielgruppe for item in results | unique:'zielgruppe' | orderBy: 'zielgruppe'">
             <option value="">auswählen...</option>
-<!--            <option>Jeder</option>
-            <option>Studenten</option>
-            <option>Dozenten</option>-->
         </select>
     </div>
     <div class="col-sm-3">
         <h3>Jahrgang</h3>
-        <select class="form-control" ng-model="jahrgangFilter" ng-options="item.jahrgang as item.jahrgang for item in results">
+        <select class="form-control" ng-model="jahrgangFilter" ng-options="item.jahrgang as item.jahrgang for item in results | unique:'jahrgang' | orderBy: 'jahrgang'">
             <option value="">auswählen...</option>
-<!--            <option>IT-2013</option>
-            <option>IT-2014</option>
-            <option>IT-2015</option>-->
         </select>
     </div>
     <div class="col-sm-3">
