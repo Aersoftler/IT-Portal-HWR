@@ -103,9 +103,11 @@ function addFile(event) {
 function removeDownload() {
     const shouldDelete = confirm("Soll die Datei wirklich gelöscht werden?");
     if (shouldDelete) {
+        document.getElementById('download').value = "";
         const $scope = getScope();
         $scope.$apply(function () {
             $scope.appli["download"][0] = "";
+            $scope.appli["file"] = undefined;
         });
         updateProductValues($scope);
     }
@@ -164,6 +166,9 @@ const opts = {
 function save() {
     const target = document.getElementById('saveContainer');
     const spinner = new Spinner(opts).spin(target);
+
+    handleEmptyLinks();
+
     const downloadElement = $("#download")[0];
     if (downloadElement.files[0]) {
         const reader = new FileReader();
@@ -176,5 +181,17 @@ function save() {
         reader.readAsDataURL(downloadElement.files[0]);
     } else {
         sendUpdate(spinner);
+    }
+}
+
+function handleEmptyLinks() {
+    handleEmptyLink("website");
+    handleEmptyLink("gitHub");
+    handleEmptyLink("download");
+}
+
+function handleEmptyLink(attribute) {
+    if (productValues[attribute][0] === "") {
+        productValues[attribute] = [];
     }
 }

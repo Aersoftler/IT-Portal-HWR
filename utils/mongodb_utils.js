@@ -123,14 +123,14 @@ function updateSoftware(software, callback) {
             if (typeof software.file !== 'undefined') {
                 software.file = software.file.split("base64,")[1];
                 fs.writeFile(path.join(programPath, software.download[0]), software.file, 'base64');
-                handleUpdateSoftware()
-            } else {
-                handleUpdateSoftware()
             }
-            const oldFilePath = path.join(programPath, oldSoftware.download[0]);
-            if (oldSoftware.download[0] !== "" && software.download[0] !== oldSoftware.download[0] && fs.existsSync(oldFilePath)) {
-                fs.unlinkSync(oldFilePath);
+            if (oldSoftware.download.length !== 0) {
+                const oldFilePath = path.join(programPath, oldSoftware.download[0]);
+                if (oldSoftware.download[0] !== "" && software.download[0] !== oldSoftware.download[0] && fs.existsSync(oldFilePath)) {
+                    fs.unlinkSync(oldFilePath);
+                }
             }
+            handleUpdateSoftware()
         });
     })
 }

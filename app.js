@@ -5,9 +5,14 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const fs = require("fs");
 const md5 = require("md5");
 const auth = require('express-basic-auth');
 const bodyParser = require('body-parser');
+const http = require('http');
+const https = require('https');
+const forceSsl = require('express-force-ssl');
+app.use(forceSsl);
 const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
@@ -164,6 +169,17 @@ app.patch("/update", function (req, res) {
     });
 });
 
+const key = fs.readFileSync('certs/itphwr.key');
+const cert = fs.readFileSync('certs/itphwr.crt');
+const ca = fs.readFileSync('certs/itphwr.crt');
 
-app.listen(3000);
-console.log("Server ist gestartet (localhost:3000)");
+const options = {
+    key: key,
+    cert: cert,
+    ca: ca
+};
+
+https.createServer(options, app).listen(443);
+http.createServer(app).listen(80);
+
+console.log("Server gestartet: https://localhost");
