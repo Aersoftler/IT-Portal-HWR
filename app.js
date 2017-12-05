@@ -81,7 +81,7 @@ app.get("/default", function (req, res) {
 /**
  * passende Anwednung an den Client
  */
-app.get("/software/:name", function (req, res) {
+app.get("/products/:name", function (req, res) {
     mongoUtils.getSoftwareByName(req.params.name, function (result) {
         res.send(result);
     });
@@ -115,7 +115,7 @@ function sendUebersicht(res) {
 /**
  * alle Anwendungen
  */
-app.get("/allProducts", function (req, res) {
+app.get("/products", function (req, res) {
     mongoUtils.getAllSoftware(function (result) {
         res.send(result);
     });
@@ -140,13 +140,13 @@ app.get("/update/:software", authentication, function (req, res) {
     res.sendFile(path.join(staticPath, "update_software.html"));
 });
 
-app.delete("/:software", authentication, function (req, res) {
+app.delete("/products/:software", authentication, function (req, res) {
     mongoUtils.deleteSoftwareByName(req.params.software, function () {
         res.send("OK");
     })
 });
 
-app.post("/:software", authentication, function (req, res) {
+app.post("/products/:software", authentication, function (req, res) {
     mongoUtils.addSoftwareByName(req.params.software, function (message) {
         if (message === "OK") {
             res.send(message);
@@ -163,7 +163,7 @@ app.use(bodyParser.urlencoded({
     limit: '1000gb'
 }));
 app.use(bodyParser.json({limit: '1000gb'}));
-app.patch("/update", function (req, res) {
+app.patch("/products/:name", function (req, res) {
     mongoUtils.updateSoftware(req.body, function (productId) {
         res.send(productId)
     });

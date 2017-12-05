@@ -7,7 +7,7 @@ angular.module(
         'update_softwareCtrl',
         function ($scope, $http) {
             const locationName = window.location.pathname.split("/");
-            $http.get("/software/" + locationName[locationName.length - 1]).then(function (response) {
+            $http.get("/products/" + locationName[locationName.length - 1]).then(function (response) {
                 $scope.appli = response.data[0];
                 productValues = response.data[0];
                 if ($scope.appli.gitHub.length === 0) {
@@ -115,7 +115,7 @@ function removeDownload() {
 
 function sendUpdate(spinner) {
     $.ajax({
-        url: "/update",
+        url: "/products/defaultname",
         type: "PATCH",
         data: JSON.stringify(productValues),
         contentType: "application/json",

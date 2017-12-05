@@ -42,7 +42,7 @@ function deleteSoftware(event) {
     const shouldDelete = confirm("Soll die Software wirklich gelöscht werden?");
     if (shouldDelete) {
         $.ajax({
-            url: "/" + event.dataset.name,
+            url: "/products/" + event.dataset.name,
             type: "DELETE",
             success: function () {
                 location.reload();
@@ -56,7 +56,7 @@ function deleteSoftware(event) {
 
 function addSoftware() {
     $.ajax({
-        url: "/" + $("#newSoftwareName").val(),
+        url: "/products/" + $("#newSoftwareName").val(),
         type: "POST",
         success: function () {
             location.reload();

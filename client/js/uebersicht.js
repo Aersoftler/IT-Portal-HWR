@@ -22,7 +22,7 @@ module.controller(
             }
         }
 
-        $http.get('/allProducts').then(function (response) {
+        $http.get('/products').then(function (response) {
             fillScopeResults(response);
         });
 /*        $http.get('/desktopApp').then(function (response) {
@@ -35,7 +35,7 @@ module.controller(
             fillScopeResults(response);
         });*/
 
-    results
+        results;
         $scope.results = results;
     }
 ]);
