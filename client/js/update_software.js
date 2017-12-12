@@ -115,7 +115,7 @@ function removeDownload() {
 
 function sendUpdate(spinner) {
     $.ajax({
-        url: "/products/defaultname",
+        url: "/products/" + productValues.name,
         type: "PATCH",
         data: JSON.stringify(productValues),
         contentType: "application/json",
