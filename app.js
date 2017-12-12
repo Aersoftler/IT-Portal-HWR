@@ -37,7 +37,7 @@ app.get("/detail/:software", function (req, res) {
  * alle Desktop - Programme
  */
 app.get("/desktopApp", function (req, res) {
-    mongoUtils.getSoftwareByType("desktop", function (result) {
+    mongoUtils.getSoftwareByType("Desktop-Anwendung", function (result) {
         res.send(result)
     });
 });
@@ -46,7 +46,7 @@ app.get("/desktopApp", function (req, res) {
  * alle Embedded - Programme
  */
 app.get("/embeddedApp", function (req, res) {
-    mongoUtils.getSoftwareByType("embedded", function (result) {
+    mongoUtils.getSoftwareByType("Embedded-Software", function (result) {
         res.send(result)
     });
 });
@@ -55,7 +55,7 @@ app.get("/embeddedApp", function (req, res) {
  * alle Apps
  */
 app.get("/mobileApp", function (req, res) {
-    mongoUtils.getSoftwareByType("mobile", function (result) {
+    mongoUtils.getSoftwareByType("App", function (result) {
         res.send(result)
     });
 });
@@ -64,7 +64,7 @@ app.get("/mobileApp", function (req, res) {
  * alle Webseiten
  */
 app.get("/website", function (req, res) {
-    mongoUtils.getSoftwareByType("website", function (result) {
+    mongoUtils.getSoftwareByType("Website", function (result) {
         res.send(result)
     });
 });
@@ -129,7 +129,7 @@ const authentication = auth({
 });
 
 function handleAuth(user, pass) {
-    return user === "admin" && md5(pass) === "1beae8ab50b47674f134976c589879b4";
+    return user === "hwr" && md5(pass) === "1beae8ab50b47674f134976c589879b4";
 }
 
 app.get("/update/", authentication, function (req, res) {
