@@ -23,15 +23,26 @@ angular.module(
         }
     );
 
+/**
+ * return current scope
+ */
 function getScope() {
     const appElement = document.querySelector('[ng-app=update_software]');
     return angular.element(appElement).scope();
 }
 
+/**
+ * updated productValues
+ * @param $scope
+ */
 function updateProductValues($scope) {
     productValues = $scope.appli;
 }
 
+/**
+ * triggers, when an image should deleted
+ * @param event
+ */
 function deleteImage(event) {
     const shouldDelete = confirm("Soll das Bild wirklich gelöscht werden?");
     if (shouldDelete) {
@@ -43,6 +54,10 @@ function deleteImage(event) {
     }
 }
 
+/**
+ * triggers, when a textFiled get changed
+ * @param event
+ */
 function textFieldChanged(event) {
     const $scope = getScope();
     if (typeof $scope.appli[event.id] === "object") {
@@ -57,6 +72,10 @@ function textFieldChanged(event) {
     updateProductValues($scope);
 }
 
+/**
+ * triggers, when a new logo should be added
+ * @param event
+ */
 function addLogo(event) {
     const reader = new FileReader();
     reader.onload = function (event) {
@@ -69,6 +88,10 @@ function addLogo(event) {
     reader.readAsDataURL(event.files[0]);
 }
 
+/**
+ * triggers, when a screenshot should be added
+ * @param event
+ */
 function addScreenshot(event) {
     for (let i = 0; i < event.files.length; i++) {
         const reader = new FileReader();
@@ -84,6 +107,10 @@ function addScreenshot(event) {
     }
 }
 
+/**
+ * triggers, when a new file should be added
+ * @param event
+ */
 function addFile(event) {
     const reader = new FileReader();
     const path = event.value.split("\\");
@@ -100,6 +127,9 @@ function addFile(event) {
     reader.readAsDataURL(file);
 }
 
+/**
+ * triggers, when a file should be deleted
+ */
 function removeDownload() {
     const shouldDelete = confirm("Soll die Datei wirklich gelöscht werden?");
     if (shouldDelete) {
@@ -113,6 +143,10 @@ function removeDownload() {
     }
 }
 
+/**
+ * sends the updated product
+ * @param spinner
+ */
 function sendUpdate(spinner) {
     $.ajax({
         url: "/products/" + productValues.name,
@@ -163,6 +197,9 @@ const opts = {
     , position: 'absolute' // Element positioning
 };
 
+/**
+ * triggers, when an user clicked on save
+ */
 function save() {
     const target = document.getElementById('saveContainer');
     const spinner = new Spinner(opts).spin(target);

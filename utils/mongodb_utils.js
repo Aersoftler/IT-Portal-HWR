@@ -9,6 +9,11 @@ const softwareCollection = "software";
 
 const programPath = path.join(__dirname, "..", "program");
 
+/**
+ * return all software by type
+ * @param type
+ * @param callback
+ */
 function getSoftwareByType(type, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -20,6 +25,11 @@ function getSoftwareByType(type, callback) {
     });
 }
 
+/**
+ * return software by name
+ * @param name
+ * @param callback
+ */
 function getSoftwareByName(name, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -31,6 +41,11 @@ function getSoftwareByName(name, callback) {
     });
 }
 
+/**
+ * return software by id (id given by MongoDB)
+ * @param id
+ * @param callback
+ */
 function getSoftwareById(id, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -42,6 +57,10 @@ function getSoftwareById(id, callback) {
     })
 }
 
+/**
+ * return all software
+ * @param callback
+ */
 function getAllSoftware(callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -53,6 +72,11 @@ function getAllSoftware(callback) {
     });
 }
 
+/**
+ * adds software in db
+ * @param software
+ * @param callback
+ */
 function addSoftware(software, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -64,6 +88,11 @@ function addSoftware(software, callback) {
     });
 }
 
+/**
+ * adds software by name
+ * @param name
+ * @param callback
+ */
 function addSoftwareByName(name, callback) {
     getSoftwareByName(name, function (result) {
         if (result.length !== 0) {
@@ -88,6 +117,11 @@ function addSoftwareByName(name, callback) {
     });
 }
 
+/**
+ * update one software, deletes deprecated software
+ * @param software complete software (how the software looks like after update)
+ * @param callback
+ */
 function updateSoftware(software, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;
@@ -135,6 +169,11 @@ function updateSoftware(software, callback) {
     })
 }
 
+/**
+ * delete software by name
+ * @param name
+ * @param callback
+ */
 function deleteSoftwareByName(name, callback) {
     MongoClient.connect(mongoUrl, function (err, db) {
         if (err) throw err;

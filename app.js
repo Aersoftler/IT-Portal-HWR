@@ -2,6 +2,7 @@
  * Startdatei des NodeJS-Servers
  */
 
+// Initial things
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -16,7 +17,6 @@ app.use(forceSsl);
 const mongoUtils = require("./utils/mongodb_utils");
 
 const staticPath = __dirname + "/client";
-
 const programPath = __dirname + "/program"; //Pfad zu herunterladbaren Dateien
 
 /**
@@ -121,8 +121,8 @@ app.get("/products", function (req, res) {
     });
 });
 
+// initial basic auth
 app.use(express.static(staticPath));
-
 const authentication = auth({
     authorizer: handleAuth,
     challenge: true
@@ -132,20 +132,32 @@ function handleAuth(user, pass) {
     return user === "hwr" && md5(pass) === "1beae8ab50b47674f134976c589879b4";
 }
 
+/**
+ * Update-Seite (Übersicht)
+ */
 app.get("/update/", authentication, function (req, res) {
     res.sendFile(path.join(staticPath, "update.html"));
 });
 
+/**
+ * Update-Seite einer speziellen Software
+ */
 app.get("/update/:software", authentication, function (req, res) {
     res.sendFile(path.join(staticPath, "update_software.html"));
 });
 
+/**
+ * delete software by name
+ */
 app.delete("/products/:software", authentication, function (req, res) {
     mongoUtils.deleteSoftwareByName(req.params.software, function () {
         res.send("OK");
     })
 });
 
+/**
+ * insert software by name
+ */
 app.post("/products/:software", authentication, function (req, res) {
     mongoUtils.addSoftwareByName(req.params.software, function (message) {
         if (message === "OK") {
@@ -157,18 +169,23 @@ app.post("/products/:software", authentication, function (req, res) {
     })
 });
 
-// var urlencodedParser = bodyParser.urlencoded({ extended: false, limit: "50mb"})
+// initial bodyParser
 app.use(bodyParser.urlencoded({
     extended: false,
     limit: '1000gb'
 }));
 app.use(bodyParser.json({limit: '1000gb'}));
+
+/**
+ * update software
+ */
 app.patch("/products/:name", function (req, res) {
     mongoUtils.updateSoftware(req.body, function (productId) {
         res.send(productId)
     });
 });
 
+// initial TLS / SSL
 const key = fs.readFileSync('certs/itphwr.key');
 const cert = fs.readFileSync('certs/itphwr.crt');
 const ca = fs.readFileSync('certs/itphwr.crt');
@@ -179,6 +196,7 @@ const options = {
     ca: ca
 };
 
+// start Server
 https.createServer(options, app).listen(443);
 http.createServer(app).listen(80);
 
