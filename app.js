@@ -188,12 +188,10 @@ app.patch("/products/:name", function (req, res) {
 // initial TLS / SSL
 const key = fs.readFileSync('certs/itphwr.key');
 const cert = fs.readFileSync('certs/itphwr.crt');
-const ca = fs.readFileSync('certs/itphwr.crt');
 
 const options = {
     key: key,
-    cert: cert,
-    ca: ca
+    cert: cert
 };
 
 // start Server
